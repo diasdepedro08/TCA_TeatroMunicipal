@@ -12,8 +12,8 @@ CREATE TABLE coletivo(
     coletivo varchar(50) not null,
     responsavel varchar(100) not null,
     cidade varchar(100) not null,
-    email ?? not null,
-    telefone ?? not null
+    email varchar(200) not null,
+    telefone varchar(20) not null
 );
 
 
@@ -59,3 +59,13 @@ CREATE TABLE pecas (
     id_ficha tecnica integer not null
 );
 
+
+-- INSERTS PADRAO
+
+INSERT INTO genero (id, genero)
+VALUES
+(1, comedia)
+(2, drama)
+(3, tragedia)
+(4, romance)
+(5, fantasia)
