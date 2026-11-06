@@ -34,19 +34,30 @@ header h1{
     overflow: hidden;
 }
 
-nav img{
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#banner{
     width: 95%;
     display: flex;
     justify-self: center;
     margin-top: 1rem;
 }
 
+nav img{
+    height: auto;
+    width: 150px;
+}
+
 .letramaior::first-letter{font-size: 32px;}
 
 #p1{
     text-align: justify; 
-    width: 90%; 
-    justify-self: center; 
+    width: 90%;
     font-size: 16px;
 }
 
@@ -68,8 +79,7 @@ h2{
 .assuntos{
     background-color: #F2F2F2;
     box-shadow: 5px 5px 10px rgb(0, 0, 0);
-    width: 80%;
-    margin: 2rem;
+    margin: 5vw;
     border-radius: 15px;
 
     h2{background-color: #01d104;}
@@ -101,15 +111,32 @@ fieldset{
 
 footer{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     box-shadow: 0px -5px 10px -5px rgb(0, 0, 0);
     background-color: #1f1f1f;
-    font-size: 0.75rem;
+    font-size: 12px;
+    margin-top: 2rem;
     padding: 1rem;
     color: #F2F2F2;
 }
 
+footer img{
+    width: 25px;
+    margin-right: 0.5rem;
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+
+    a{color: #F2F2F2; text-decoration: none;}
+    a:hover{text-decoration: underline #F2F2F2 1px;}
+}
+
+
 /*--------------------------BOTÕES---------------------------------*/
+
 
 #ini{
     margin: 1rem;
