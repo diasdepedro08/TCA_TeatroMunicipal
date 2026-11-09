@@ -35,31 +35,27 @@ header h1{
 }
 
 nav{
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    align-self: center;
 }
 
 #banner{
-    width: 95%;
-    display: flex;
-    justify-self: center;
+    width: 100%;
     margin-top: 1rem;
 }
 
 nav img{
     height: auto;
-    width: 150px;
+    width: 125px;
+    margin: 5px;
 }
 
 .letramaior::first-letter{font-size: 32px;}
 
-#p1{
-    text-align: justify; 
-    width: 90%;
-    font-size: 16px;
-}
 
 main p{
     font-size: 18px;
@@ -67,7 +63,6 @@ main p{
     padding: 1rem;
 }
 
-/*------------------------------------------------------------------------*/
 
 h2{
     margin: 0;
@@ -84,6 +79,10 @@ h2{
 
     h2{background-color: #01d104;}
 }
+
+
+/*--------------------------COMENTARIOS---------------------------------*/
+
 
 .cadastro{
     display: flex;
@@ -107,7 +106,8 @@ fieldset{
     align-items: end;
 }
 
-#enviar:hover{background-color: #535353; color: #F2F2F2;}
+/*--------------------------TUDO DO FOOTER---------------------------------*/
+
 
 footer{
     display: flex;
@@ -142,6 +142,11 @@ footer div{
     margin: 1rem;
     position: fixed;
     bottom: 10px; right: 10px;
+
+    img{
+        width: auto;
+        height: 60px;
+    }
 }
 
 input{
@@ -163,3 +168,7 @@ textarea{
     border-radius: 0.5rem;
     resize: none;
 }
+
+#enviar{width: 75px;}
+
+#enviar:hover{background-color: #535353; color: #F2F2F2;}
