@@ -2,7 +2,7 @@ const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
 
 const formulario = document.getElementById("formulario");
-const postados = document.getElementById("postados");
+
 
 
 "..."
@@ -49,3 +49,52 @@ formulario.addEventListener("submit", async (event) => {
     }
 });
 
+
+
+async function buscarEDisplayDados() {
+
+  const SUPABASE_URL = 'https://tbilczvprmyvizrlvewr.supabase.co';
+  const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRiaWxjenZwcm15dml6cmx2ZXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQyNjQ5NzAsImV4cCI6MjEwOTg0MDk3MH0.6DGsn5aLkJ0_igXuydcxtlGyNMjM1RpDnyOssAoMwjA';
+  const TABELA = 'Comentarios';
+
+  const postados = document.getElementById("postados");
+
+  try {
+
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABELA}?select=*`, {
+      method: 'GET',
+      headers: {
+        'apikey': ANON_KEY,
+        'Authorization': `Bearer ${ANON_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+
+    if (!response.ok) {
+      throw new Error(`Erro do servidor: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+
+    if (data && data.length > 0) {
+
+
+      const textoFormatado = data.map(item => item.nome).join(': ');
+
+      postados.textContent = textoFormatado;
+
+    } 
+    
+    else {
+      postados.textContent = 'Nenhum dado encontrado.';
+    }
+
+  } catch (error) {
+    postados.textContent = 'Erro ao carregar dados: ' + error.message;
+  }
+}
+
+
+buscarEDisplayDados();
