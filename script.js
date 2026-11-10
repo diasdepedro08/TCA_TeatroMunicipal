@@ -5,18 +5,18 @@ const formulario = document.getElementById("formulario");
 const enviar = document.getElementById("enviar");
 
 formulario.addEventListener("submit", async (event) => {
-    event.preventDefault()
-    enviar.textContent = 'Enviando...'
+  event.preventDefault()
+  enviar.disabled = true
+  enviar.textContent = 'Enviando...'
 
-    const formData = new FormData(form)
-    const dados = {
-        nome: formData.get('nome'),
-        email: formData.get('email'),
-        mensagem: formData.get('mensagem')
-    }
+  const dados = {
+    nome: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    mensagem: document.getElementById("coment").value
+  }
 
-    const { data, error } = await supabase
-    .from('Comentarios')
+  const { data, error } = await supabase
+    .from('public.Comentarios')
     .insert([dados])
 
   if (error) {
@@ -26,5 +26,8 @@ formulario.addEventListener("submit", async (event) => {
     alert('Comentário publicado')
     form.reset()
   }
+
+  enviar.disabled = false
+  enviar.textContent = 'Enviar'
 
 });
