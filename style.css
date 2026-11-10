@@ -54,22 +54,9 @@ nav img{
     margin: 5px;
 }
 
+
 .letramaior::first-letter{font-size: 32px;}
 
-
-main p{
-    font-size: 18px;
-    width: 90%;
-    padding: 1rem;
-}
-
-
-h2{
-    margin: 0;
-    padding: 0.75rem;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
 
 .assuntos{
     background-color: #F2F2F2;
@@ -77,11 +64,24 @@ h2{
     margin: 5vw;
     border-radius: 15px;
 
-    h2{background-color: #01d104;}
+    p{
+        font-size: 18px;
+        width: 90%;
+        padding: 1rem;
+    }
+}
+
+h2{
+    background-color: #01d104;
+    margin: 0;
+    padding: 0.75rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 
 /*--------------------------COMENTARIOS---------------------------------*/
+
 
 .cadastro{
     display: flex;
@@ -102,6 +102,42 @@ form{
     box-shadow: 5px 5px 10px black;
     padding: 0;
 }
+
+input{
+    width: 80%;
+    justify-self: start;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    background-color: rgb(192, 192, 192);
+    border: none;
+}
+
+textarea{
+    height: 200px;
+    background-color: rgb(192, 192, 192);
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    resize: none;
+}
+
+button{
+    justify-self: start;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.75rem;
+    background-color: rgb(192, 192, 192);
+    width: 75px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+button:hover{background-color: #535353; color: #F2F2F2;}
+
+
 
 /*--------------------------TUDO DO FOOTER---------------------------------*/
 
@@ -145,37 +181,3 @@ footer div{
         height: 60px;
     }
 }
-
-input{
-    width: 80%;
-    justify-self: start;
-    border-radius: 0.5rem;
-    padding: 0.75rem;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    background-color: rgb(192, 192, 192);
-    border: none;
-}
-
-textarea{
-    height: 200px;
-    background-color: rgb(192, 192, 192);
-    border: none;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 0.5rem;
-    resize: none;
-}
-
-button{
-    justify-self: start;
-    border-radius: 0.5rem;
-    border: none;
-    padding: 0.75rem;
-    background-color: rgb(192, 192, 192);
-    width: 75px;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-}
-
-button:hover{background-color: #535353; color: #F2F2F2;}

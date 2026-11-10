@@ -2,6 +2,12 @@ const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
 
 const formulario = document.getElementById("formulario");
+const postados = document.getElementById("postados");
+
+
+"..."
+
+
 
 formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
