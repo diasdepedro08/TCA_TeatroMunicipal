@@ -81,7 +81,8 @@ async function buscarEDisplayDados() {
     if (data && data.length > 0) {
 
 
-      const textoFormatado = data.map(item => item.nome).join(': ');
+      const textoFormatado = data.map(item => item.nome + item.comentario);
+
 
       postados.textContent = textoFormatado;
 
