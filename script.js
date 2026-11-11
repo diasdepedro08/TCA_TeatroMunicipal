@@ -3,12 +3,6 @@ const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA
 
 const formulario = document.getElementById("formulario");
 
-
-
-"..."
-
-
-
 formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -80,16 +74,10 @@ async function buscarEDisplayDados() {
 
     if (data && data.length > 0) {
 
+      const textoFormatado = data.map(item => `<p class="pcs"><strong>${item.nome}:</strong> ${item.comentario}</p>`).join("");
 
-      const textoFormatado = data.map(item => item.nome + item.comentario);
+      postados.innerHTML = textoFormatado;
 
-
-      postados.textContent = textoFormatado;
-
-    } 
-    
-    else {
-      postados.textContent = 'Nenhum dado encontrado.';
     }
 
   } catch (error) {
