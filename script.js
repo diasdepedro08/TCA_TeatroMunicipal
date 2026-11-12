@@ -3,12 +3,23 @@ class MeuHeader extends HTMLElement {
   super();
   this.innerHTML = `
   <header>
-        
-        <ul>
-            <li><a href="principal.html">Início</a></li>
-            <li><a href="cadastro.html">Editais</a></li>
-            <li><a href="museu.html">Museu Online</a></li>
-        </ul>
+    <nav>
+      <input type="checkbox" id="menu">
+
+      <label for="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul>
+        <li><h2>Menu:</h2></li>
+        <li><a href="principal.html">Início</a></li>
+        <li><a href="museu.html">Museu Online</a></li>
+        <li><a href="cadastro.html">Editais</a></li>
+      </ul>
+    </nav>
+
     <img src="img/logo.png" id="logo" alt="Logo">
   </header>`;
   }
