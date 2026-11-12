@@ -3,8 +3,13 @@ class MeuHeader extends HTMLElement {
   super();
   this.innerHTML = `
   <header>
+        
+        <ul>
+            <li><a href="principal.html">Início</a></li>
+            <li><a href="cadastro.html">Editais</a></li>
+            <li><a href="museu.html">Museu Online</a></li>
+        </ul>
     <img src="img/logo.png" id="logo" alt="Logo">
-    <h1>MEMÓRIA TEATRAL RIO-GRANDINA</h1>
   </header>`;
   }
  }

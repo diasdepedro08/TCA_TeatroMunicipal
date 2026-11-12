@@ -10,16 +10,39 @@ body{
     flex-direction: column;
 }
 
+/*-------------------------------AAAAAAAAAAAAAA--------------------------------*/
+
 header{
     color: #F2F2F2;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background-color: #1f1f1f;
-    overflow: hidden;
+    overflow: visible;
     padding: 1rem;
     box-shadow: 0px 5px 10px -5px rgb(0, 0, 0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #logo{
     width: auto;
@@ -27,36 +50,26 @@ header{
     overflow: hidden;
 }
 
-header h1{
-    font-family: var(--fonte1);
-    font-weight: normal;
-    font-size: 3vw;
-    overflow: hidden;
-}
 
-nav{
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    align-self: center;
-}
+/*-------------------------------MAIN--------------------------------*/
 
 #banner{
     width: 100%;
     margin-top: 1rem;
 }
 
-nav img{
-    height: auto;
-    width: 125px;
-    margin: 5px;
+nav{
+    width: 95%;
+    display: block;
+    align-self: center;
+    text-align: center;
+
+    img{
+        height: auto;
+        width: 125px;
+        margin: 5px;
+    }
 }
-
-
-.letramaior::first-letter{font-size: 32px;}
-
 
 .assuntos{
     background-color: #F2F2F2;
@@ -183,3 +196,5 @@ footer div{
 }
 
 .pcs{margin: 0px;}
+
+.letramaior::first-letter{font-size: 32px;}
