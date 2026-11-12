@@ -1,3 +1,16 @@
+class MeuHeader extends HTMLElement {
+  constructor() {
+  super();
+  this.innerHTML = `
+  <header>
+    <img src="img/logo.png" id="logo" alt="Logo">
+    <h1>MEMÓRIA TEATRAL RIO-GRANDINA</h1>
+  </header>`;
+  }
+ }
+ customElements.define('meu-header', MeuHeader);
+
+
 const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
 
