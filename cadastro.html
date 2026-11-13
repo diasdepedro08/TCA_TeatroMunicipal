@@ -25,16 +25,45 @@
 
     <p>Formulário de inscrição para ocupação Teatro Municipal com os editais Ocupa Teatro Municipal</p>
 
-    <form action="">
-  
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+    <form>
+        <h1>Espetáculo</h1>
 
-        <button></button>
+        <fieldset>
+            <label for="titulo">Titulo da Proposta:</label>
+            <input type="text" placeholder="Titulo:" id="titulo" required>
+
+            <label for="coletivo">Nome do grupo:</label>
+            <input type="text" placeholder="Coletivos, escolas, etc." id="titulo" required>
+
+            <label for="duracao">Tempo da Sessão:</label>
+            <input type="number" placeholder="Ex: 90 min" id="duracao">
+
+            <label for="sinopse">Sinopse:</label>
+            <textarea name="Sinopse" id="sinopse"></textarea>
+        </fieldset>
+
+        <h1>Ficha Técnica:</h1>
+
+        <fieldset>
+            <label for="direcao">Direção:</label>
+            <input type="text" placeholder="Diretor:" id="direcao">
+
+            <label for="iluminacao">Iluminação:</label>
+            <input type="text" placeholder="Iluminador:" id="iluminacao">
+
+            <label for="sonoplastia">Sonoplastia:</label>
+            <input type="text" placeholder="Sonoplasta:" id="sonoplastia" required>
+
+            <label for="cenografia">Cenografia:</label>
+            <input type="text" placeholder="Cenógrafo:" id="cenografia" required>
+
+            <label for="figurino">Figurino:</label>
+            <input type="text" placeholder="Figurinista:" id="figurino" required>
+
+            <label for="maquiagem">Caracterização:</label>
+            <input type="text" placeholder="Maquiador:" id="maquiagem" required>
+        </fieldset>
+
     </form>
 
 
