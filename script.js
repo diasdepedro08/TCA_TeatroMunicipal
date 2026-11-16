@@ -40,94 +40,118 @@ class MeuFooter extends HTMLElement {
  }
  customElements.define('meu-footer', MeuFooter);
 
+//----------------------------------------------------------------------------------
 
 
 const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
+const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
 
-const formulario = document.getElementById("formulario");
 
-formulario.addEventListener("submit", async (event) => {
-    event.preventDefault();
 
-    const dados = {
-        nome: document.getElementById("name").value,
-        email: document.getElementById("mail").value,
-        comentario: document.getElementById("coment").value
-    };
 
-    try {
-        const resposta = await fetch(
-            `${SUPABASE_URL}/rest/v1/Comentarios`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "apikey": SUPABASE_PUBLISHABLE_KEY,
-                    "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-                    "Prefer": "return=minimal"
-                },
-                body: JSON.stringify(dados)
+//-------------------------------------------CRUD do Teleken-----------------------------------------------------------------
+
+
+        const noticiaForm = document.querySelector('#noticiaForm');
+        const noticiaIdInput = document.querySelector('#noticiaId');
+        const noticiaTitleInput = document.querySelector('#noticiaTitle');
+        const noticiaBodyInput = document.querySelector('#noticiaBody');
+        const submitBtn = document.querySelector('#submitBtn');
+        const noticiasContainer = document.querySelector('#noticiasContainer');
+        const mensagem = document.querySelector('#mensagem');
+
+
+  
+        let localNoticias = [];
+        
+        //Ouvintes de eventos
+        noticiaForm.addEventListener('submit', updateNoticia);
+        
+
+        // 1. READ - Buscar as noticias *********
+        async function buscarNoticias() {
+            try {
+                const response = await fetch(`${API_URL}`, {
+                    headers: {
+                        apikey: SUPABASE_PUBLISHABLE_KEY
+                    }
+                });
+                localNoticias = await response.json();
+                renderNoticias();
+            } catch (error) {
+                noticiasContainer.innerHTML = 'Erro ao carregar os dados.';
             }
-        );
-
-        if (!resposta.ok) {
-            const erro = await resposta.json();
-            console.error("Erro ao salvar:", erro);
-            alert("Erro ao publicar comentário.");
-            return;
         }
 
-        alert("Comentário publicado com sucesso!");
-        formulario.reset();
+        // Renderizar os elementos na tela
+        function renderNoticias() {
+            if (localNoticias.length === 0) {
+                noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada.</p>';
+                return;
+            }
 
-    } catch (erro) {
-        console.error("Erro:", erro);
-        alert("Não foi possível conectar ao servidor.");
-    }
-});
+            noticiasContainer.innerHTML = '';
+            localNoticias.forEach(noticia => {
+                noticiasContainer.innerHTML += `
+                    <div class="noticia-card" id="noticia-${noticia.id}">
+                        <h3>${noticia.titulo}</h3>
+                        <p>${noticia.corpo}</p>
+                        <div class="actions">
+                            <button class="btn-edit" onclick="prepararEdit(${noticia.id})">Editar</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
 
+       
 
+        // Preenche o formulário com os dados da noticia selecionada para edição
+        function prepararEdit(id) {
+            const noticia = localNoticias.find(n => n.id === id);
+            if (noticia) {
+                noticiaForm.classList.remove('oculto');
+                mensagem.innerHTML = 'Informe os dados que serão alterados';
 
-async function buscarEDisplayDados() {
+                noticiaIdInput.value = noticia.id;
+                noticiaTitleInput.value = noticia.titulo;
+                noticiaBodyInput.value = noticia.corpo;
+                          
+            }
+        }
 
-  const SUPABASE_URL = 'https://tbilczvprmyvizrlvewr.supabase.co';
-  const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRiaWxjenZwcm15dml6cmx2ZXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQyNjQ5NzAsImV4cCI6MjEwOTg0MDk3MH0.6DGsn5aLkJ0_igXuydcxtlGyNMjM1RpDnyOssAoMwjA';
-  const TABELA = 'Comentarios';
+        // 3. UPDATE - Função que envia o PUT para a API *********
+        async function updateNoticia(e) {
+            e.preventDefault(); // Impede o HTML de recarregar a página inteira
+            
+            const id = noticiaIdInput.value;
+            const noticiaData = {
+                titulo: noticiaTitleInput.value,
+                corpo: noticiaBodyInput.value
+            };
 
-  const postados = document.getElementById("postados");
+            try {
+                const url = `${API_URL}?id=eq.${id}`;
+                const response = await fetch(url, {
+                    method: 'PATCH',
+                    headers: {    
+                         apikey: PUBLISHABLE_KEY,
+                        'Content-Type': 'application/json',  
+                         Prefer:'return=representation'
+                    },
+                    body: JSON.stringify(noticiaData)
+                });
+                const updatedNoticia = await response.json();
+                
+                noticiaForm.classList.add('oculto');
+                noticiasContainer.classList.remove('oculto');
+                mensagem.innerHTML = `Notícia alterada com sucesso!<br>
+                                    Escolha outra notícia para editar.`;
+                buscarNoticias(); // Atualiza a lista de notícias após a alteração
+            } catch (error) {
+                console.error('Erro ao alterar notícia:', error);
+            }
+        }
 
-  try {
-
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABELA}?select=*`, {
-      method: 'GET',
-      headers: {
-        'apikey': ANON_KEY,
-        'Authorization': `Bearer ${ANON_KEY}`,
-        'Content-Type': 'application/json'
-      }
-    });
-
-
-    if (!response.ok) {
-      throw new Error(`Erro do servidor: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-
-
-    if (data && data.length > 0) {
-
-      const textoFormatado = data.map(item => `<p class="pcs"><strong>${item.nome}:</strong> ${item.comentario}</p>`).join("");
-
-      postados.innerHTML = textoFormatado;
-
-    }
-
-  } catch (error) {
-    postados.textContent = 'Erro ao carregar dados: ' + error.message;
-  }
-}
-
-
-buscarEDisplayDados();
+        buscarNoticias(); // Carrega as notícias ao iniciar a página
