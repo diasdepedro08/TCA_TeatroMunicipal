@@ -1,3 +1,5 @@
+//------------------------------------CUSTOM ELEMENTS-----------------------------------------------
+
 class MeuHeader extends HTMLElement {
   constructor() {
   super();
@@ -50,9 +52,6 @@ const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
 
 
 
-//-------------------------------------------CRUD do Teleken-----------------------------------------------------------------
-
-
         const noticiaForm = document.querySelector('#noticiaForm');
         const noticiaIdInput = document.querySelector('#noticiaId');
         const noticiaTitleInput = document.querySelector('#noticiaTitle');
@@ -92,13 +91,15 @@ const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
             }
 
             noticiasContainer.innerHTML = '';
-            localNoticias.forEach(noticia => {
+            localNoticias.forEach(Comentarios => {
                 noticiasContainer.innerHTML += `
-                    <div class="noticia-card" id="noticia-${noticia.id}">
-                        <h3>${noticia.titulo}</h3>
-                        <p>${noticia.corpo}</p>
+                    <div class="noticia-card" id="noticia-${Comentarios.id}">
+                        <h3>${Comentarios.nome}</h3>
+                        <p>${Comentarios.comentario}</p>
+
                         <div class="actions">
-                            <button class="btn-edit" onclick="prepararEdit(${noticia.id})">Editar</button>
+                            <button class="btn-edit" onclick="prepararEdit(${Comentarios.id})">Editar</button>
+                            <button class="btn-delete" onclick="deletarNoticia(${Comentarios.id})">Deletar</button>
                         </div>
                     </div>
                 `;
@@ -114,9 +115,9 @@ const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
                 noticiaForm.classList.remove('oculto');
                 mensagem.innerHTML = 'Informe os dados que serão alterados';
 
-                noticiaIdInput.value = noticia.id;
-                noticiaTitleInput.value = noticia.titulo;
-                noticiaBodyInput.value = noticia.corpo;
+                noticiaIdInput.value = Comentarios.id;
+                noticiaTitleInput.value = Comentarios.titulo;
+                noticiaBodyInput.value = Comentarios.corpo;
                           
             }
         }
@@ -154,4 +155,34 @@ const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
             }
         }
 
-        buscarNoticias(); // Carrega as notícias ao iniciar a página
+            async function deletarNoticia(id) {
+
+            if (!confirm('Deseja realmente excluir esta notícia?')) return;
+
+            try {
+                const url = `${API_URL}?id=eq.${id}`;
+                let resposta = await fetch(url, {
+                    method: 'DELETE',
+                    headers: {
+                        apikey: SUPABASE_PUBLISHABLE_KEY
+                    }
+                    
+                });
+               mensagem.innerHTML = `Notícia excluída com sucesso! <br>
+                                    Escolha outra notícia para excluir.`;       
+               buscarNoticias();
+                                } catch (error) {
+                console.error('Erro ao excluir notícia:', error);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        buscarNoticias();

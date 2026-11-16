@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Editor de comentários</title>
+    <title>Gerenciador de comentários</title>
 </head>
 
 <body>
@@ -55,13 +55,27 @@
 
 
     <style>
-        form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; }
+        form { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 10px; 
+            margin-bottom: 20px; 
+            padding: 15px; 
+            border: 1px solid #ccc; 
+        }
+
         input, textarea, button { padding: 8px; font-size: 16px; }
+        
         button { cursor: pointer; background-color: #007bff; color: white; border: none; }
-        button:hover { background-color: #0056b3; }
-        .noticia-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
-        .actions { margin-top: 10px; }
+        
         .btn-edit { background-color: #ffc107; color: black; margin-right: 5px; }
-        #mensagem { margin-bottom: 10px; color: green; font-weight: bold; }
+
         .oculto { display: none; }
+       
+        button:hover { background-color: #0056b3; cursor: pointer; }
+        .noticia-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+
+        .btn-delete { background-color: #dc3545; }
+        #mensagem { margin-bottom: 10px; color: green; font-weight: bold; }
+
     </style>
