@@ -26,6 +26,21 @@ class MeuHeader extends HTMLElement {
  }
  customElements.define('meu-header', MeuHeader);
 
+class MeuFooter extends HTMLElement {
+  constructor() {
+  super();
+  this.innerHTML = `
+    <footer>
+      <h1>Siga nossas redes:</h1>
+      <div><img src="img/Instagram_logo.png" alt="Instagram_logo"><a href="https://www.instagram.com/teatromunicipaldoriogrande?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==">@teatromunicipaldoriogrande</a></div>
+      <section><h3>Idealizadora</h3><p>Raquel Valério, Rio Grande-RS <br>Diretora do teatro municipal de Rio Grande</p></section>
+      <section><h3>Programador</h3><p>Pedro Dias de Souza, Rio Grande-RS,  @2026 <br> Contatos: 53 99927-6278, diasdesouzapedro3@gmail.com <br> Aluno IFRS campus Rio Grande.</p></section>
+    </footer>`;
+  }
+ }
+ customElements.define('meu-footer', MeuFooter);
+
+
 
 const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
