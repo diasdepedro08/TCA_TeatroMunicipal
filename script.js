@@ -42,7 +42,7 @@ class MeuFooter extends HTMLElement {
  }
  customElements.define('meu-footer', MeuFooter);
 
-//----------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
 
 
 const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
@@ -58,12 +58,13 @@ const coment = document.querySelector('#coment');
 
 const submitBtn = document.querySelector('#submitBtn');
 const noticiasContainer = document.querySelector('#noticiasContainer');
+const postados = document.querySelector('#postados');
 const mensagem = document.querySelector('#mensagem');
 
 
 let localNoticias = [];
 
-//Criar:
+//CRIAR:
 
 comentarios.addEventListener('submit', criarNoticia);
         
@@ -95,8 +96,38 @@ async function criarNoticia(e) {
   }
 }
 
+async function buscarcoments() {
+  try {
+    const response = await fetch(`${API_URL}`, {
+      headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY
+      }
+    });
+    localNoticias = await response.json();
+    rendercoments();
+  } catch (error) {
+    postados.innerHTML = 'Erro ao carregar os dados.';
+  }
+}
 
-//Editar e Excluir:
+function rendercoments() {
+  if (localNoticias.length === 0) {
+    postados.innerHTML = '<p>Nenhuma notícia encontrada.</p>';
+    return;
+  }
+
+  postados.innerHTML = '';
+  localNoticias.forEach(Comentarios => {
+  postados.innerHTML += `
+    <div id="noticia-${Comentarios.id}">
+      <h3>${Comentarios.nome}</h3>
+      <p>${Comentarios.comentario}</p>
+    </div>`;
+  });
+}
+
+
+//EDTAR:
         
 comentarios.addEventListener('submit', updateNoticia);
         
@@ -136,6 +167,7 @@ function renderNoticias() {
     </div>`;
   });
 }
+
 
 function prepararEdit(id) {
   const noticia = localNoticias.find(n => n.id === id);
@@ -183,6 +215,7 @@ async function updateNoticia(e) {
   }
 }
 
+//EXCLUIR:
 
 async function deletarNoticia(id) {
   if (!confirm('Deseja realmente excluir esta notícia?')) return;
@@ -204,3 +237,4 @@ async function deletarNoticia(id) {
 }
 
 buscarNoticias();
+buscarcoments();
