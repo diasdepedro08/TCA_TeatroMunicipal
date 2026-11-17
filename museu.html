@@ -67,16 +67,21 @@
 
         <section class="cadastro">
 
-            <form id="formulario">
+            <form id="comentarios">
                 <h2>Comente:</h2>
+
+                <input type="hidden" id="comentID">
+                
                 <input type="text" name="nome" placeholder="Nome:" id="name" required>
 
                 <input type="email" placeholder="E-mail:" id="mail" required>
 
                 <textarea name="comentario" placeholder="Diga sua opinião ou algum assunto que falta ser mostrado:" id="coment" required></textarea>
 
-                <button type="submit" id="enviar">Enviar</button>
+                <button type="submit" id="submitBtn">Enviar</button>
             </form>
+
+            <div id="mensagem">Preencha os dados para criar uma nova notícia.</div>
             
             <section class="assuntos">
                 <h2>Comentários:</h2>

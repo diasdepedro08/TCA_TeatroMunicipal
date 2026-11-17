@@ -49,11 +49,14 @@ const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
 const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
 
+//FORMULARIOS:
 const noticiaForm = document.querySelector('#noticiaForm');
+const comentarios = document.querySelector('#comentarios');
 
-const noticiaIdInput = document.querySelector('#noticiaId');
-const noticiaTitleInput = document.querySelector('#noticiaTitle');
-const noticiaBodyInput = document.querySelector('#noticiaBody');
+const comentID = document.querySelector('#comentID');
+const name = document.querySelector('#name');
+const mail = document.querySelector('#mail');
+const coment = document.querySelector('#coment');
 
 const submitBtn = document.querySelector('#submitBtn');
 const noticiasContainer = document.querySelector('#noticiasContainer');
@@ -61,6 +64,41 @@ const mensagem = document.querySelector('#mensagem');
 
 
 let localNoticias = [];
+
+//Criar:
+
+comentarios.addEventListener('submit', criarNoticia);
+        
+async function criarNoticia(e) {
+  e.preventDefault(); 
+
+  const noticiaData = {
+    id: comentID.value,
+    nome: name.value,
+    email: mail.value,
+    comentario: coment.value
+  };
+            
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY,
+        'Content-Type': 'application/json',
+        Prefer: 'return=representation'
+      },
+      body: JSON.stringify(noticiaData)
+    });
+    const newNoticia = await response.json();
+    mensagem.innerHTML = `Notícia criada com sucesso!<br>Preencha o formulário novamente para criar outra notícia.`;
+    comentarios.reset();
+  } catch (error) {
+    console.error('Erro ao criar notícia:', error);
+  }
+}
+
+
+//Editar e Excluir:
         
 noticiaForm.addEventListener('submit', updateNoticia);
         
@@ -101,18 +139,15 @@ function renderNoticias() {
   });
 }
 
-
-//Editar e Excluir:
-
 function prepararEdit(id) {
   const noticia = localNoticias.find(n => n.id === id);
   if (noticia) {
     noticiaForm.classList.remove('oculto');
     mensagem.innerHTML = 'Informe os dados que serão alterados';
 
-    noticiaIdInput.value = noticia.id;
-    noticiaTitleInput.value = noticia.nome;
-    noticiaBodyInput.value = noticia.comentario;
+    comentID.value = noticia.id;
+    name.value = noticia.nome;
+    coment.value = noticia.comentario;
   }
 }
 
@@ -120,10 +155,10 @@ function prepararEdit(id) {
 async function updateNoticia(e) {
   e.preventDefault();
             
-  const id = noticiaIdInput.value;
+  const id = comentID.value;
   const noticiaData = {
-    titulo: noticiaTitleInput.value,
-    corpo: noticiaBodyInput.value
+    titulo: name.value,
+    corpo: coment.value
   };
 
   try {
@@ -131,7 +166,7 @@ async function updateNoticia(e) {
     const response = await fetch(url, {
       method: 'PATCH',
         headers: {    
-          apikey: PUBLISHABLE_KEY,
+          apikey: SUPABASE_PUBLISHABLE_KEY,
           'Content-Type': 'application/json',  
           Prefer:'return=representation'
         },

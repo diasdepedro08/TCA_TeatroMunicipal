@@ -140,9 +140,9 @@ h2{
         width: 90%;
         background-color: #F2F2F2;
         border-radius: 1rem;
+        border: none;
         box-shadow: 5px 5px 10px black;
-        display: flex;
-        flex-direction: column;
+        padding: 0px;
     }
 }
 
@@ -169,18 +169,15 @@ textarea{
     resize: none;
 }
 
-.cadastro button{
-    justify-self: start;
-    border-radius: 0.5rem;
+ button { 
+    cursor: pointer; 
+    background-color: #007bff; 
+    color: white; 
     border: none;
-    padding: 0.75rem;
-    background-color: rgb(192, 192, 192);
-    width: 75px;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
+    padding: 8px;
 }
 
-button:hover{background-color: #535353; color: #F2F2F2;}
+button:hover { background-color: #0056b3; cursor: pointer; }
 
 
 
@@ -230,3 +227,24 @@ footer div{
 .pcs{margin: 0px;}
 
 .letramaior::first-letter{font-size: 32px;}
+
+#mensagem { 
+    color: green; 
+    font-weight: bold; 
+}
+
+.oculto { display: none; }
+
+form { 
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 20px; 
+    padding: 15px; 
+    border: 1px solid #ccc; 
+}
+        
+.btn-edit { background-color: #ffc107; color: black; margin-right: 5px; }
+    
+.noticia-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
+
+.btn-delete { background-color: #dc3545; }

@@ -26,10 +26,14 @@
 
     <div id="mensagem">Escolha uma notícia para editar.</div>
     
-    <form id="noticiaForm" class="oculto">    
+    <form id="noticiaForm" class="oculto">
+
         <input type="hidden" id="noticiaId">
-        <input type="text" id="noticiaTitle" placeholder="Título da notícia" required>
-        <textarea id="noticiaBody" placeholder="Conteúdo da notícia" rows="3" required></textarea>
+
+        <input type="text" name="nome" placeholder="Nome:" id="name" required>
+
+        <textarea name="comentario" id="coment" required></textarea>
+
         <button type="submit" id="submitBtn">Alterar notícia</button>
         <button type="submit" id="cancelBTN">Cancelar</button>
     </form>
@@ -40,43 +44,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <style>
-        form { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 10px; 
-            margin-bottom: 20px; 
-            padding: 15px; 
-            border: 1px solid #ccc; 
-        }
-
-        input, textarea, button { padding: 8px; font-size: 16px; }
-        
-        button { cursor: pointer; background-color: #007bff; color: white; border: none; }
-        
-        .btn-edit { background-color: #ffc107; color: black; margin-right: 5px; }
-
-        .oculto { display: none; }
-       
-        button:hover { background-color: #0056b3; cursor: pointer; }
-        .noticia-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 4px; }
-
-        .btn-delete { background-color: #dc3545; }
-        #mensagem { margin-bottom: 10px; color: green; font-weight: bold; }
-
-    </style>
