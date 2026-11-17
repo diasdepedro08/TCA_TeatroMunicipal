@@ -49,140 +49,123 @@ const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
 const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
 
+const noticiaForm = document.querySelector('#noticiaForm');
+
+const noticiaIdInput = document.querySelector('#noticiaId');
+const noticiaTitleInput = document.querySelector('#noticiaTitle');
+const noticiaBodyInput = document.querySelector('#noticiaBody');
+
+const submitBtn = document.querySelector('#submitBtn');
+const noticiasContainer = document.querySelector('#noticiasContainer');
+const mensagem = document.querySelector('#mensagem');
 
 
-
-        const noticiaForm = document.querySelector('#noticiaForm');
-        const noticiaIdInput = document.querySelector('#noticiaId');
-        const noticiaTitleInput = document.querySelector('#noticiaTitle');
-        const noticiaBodyInput = document.querySelector('#noticiaBody');
-        const submitBtn = document.querySelector('#submitBtn');
-        const noticiasContainer = document.querySelector('#noticiasContainer');
-        const mensagem = document.querySelector('#mensagem');
-
-
-  
-        let localNoticias = [];
+let localNoticias = [];
         
-        //Ouvintes de eventos
-        noticiaForm.addEventListener('submit', updateNoticia);
+noticiaForm.addEventListener('submit', updateNoticia);
         
 
-        // 1. READ - Buscar as noticias *********
-        async function buscarNoticias() {
-            try {
-                const response = await fetch(`${API_URL}`, {
-                    headers: {
-                        apikey: SUPABASE_PUBLISHABLE_KEY
-                    }
-                });
-                localNoticias = await response.json();
-                renderNoticias();
-            } catch (error) {
-                noticiasContainer.innerHTML = 'Erro ao carregar os dados.';
-            }
-        }
+async function buscarNoticias() {
+  try {
+    const response = await fetch(`${API_URL}`, {
+      headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY
+      }
+    });
+    localNoticias = await response.json();
+    renderNoticias();
+  } catch (error) {
+    noticiasContainer.innerHTML = 'Erro ao carregar os dados.';
+  }
+}
 
-        // Renderizar os elementos na tela
-        function renderNoticias() {
-            if (localNoticias.length === 0) {
-                noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada.</p>';
-                return;
-            }
 
-            noticiasContainer.innerHTML = '';
-            localNoticias.forEach(Comentarios => {
-                noticiasContainer.innerHTML += `
-                    <div class="noticia-card" id="noticia-${Comentarios.id}">
-                        <h3>${Comentarios.nome}</h3>
-                        <p>${Comentarios.comentario}</p>
+function renderNoticias() {
+  if (localNoticias.length === 0) {
+    noticiasContainer.innerHTML = '<p>Nenhuma notícia encontrada.</p>';
+    return;
+  }
 
-                        <div class="actions">
-                            <button class="btn-edit" onclick="prepararEdit(${Comentarios.id})">Editar</button>
-                            <button class="btn-delete" onclick="deletarNoticia(${Comentarios.id})">Deletar</button>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+  noticiasContainer.innerHTML = '';
+  localNoticias.forEach(Comentarios => {
+  noticiasContainer.innerHTML += `
+    <div class="noticia-card" id="noticia-${Comentarios.id}">
+      <h3>${Comentarios.nome}</h3>
+      <p>${Comentarios.comentario}</p>
 
-       
+      <div class="actions">
+        <button class="btn-edit" onclick="prepararEdit(${Comentarios.id})">Editar</button>
+        <button class="btn-delete" onclick="deletarNoticia(${Comentarios.id})">Deletar</button>
+      </div>
+    </div>`;
+  });
+}
 
-        // Preenche o formulário com os dados da noticia selecionada para edição
-        function prepararEdit(id) {
-            const noticia = localNoticias.find(n => n.id === id);
-            if (noticia) {
-                noticiaForm.classList.remove('oculto');
-                mensagem.innerHTML = 'Informe os dados que serão alterados';
 
-                noticiaIdInput.value = Comentarios.id;
-                noticiaTitleInput.value = Comentarios.titulo;
-                noticiaBodyInput.value = Comentarios.corpo;
-                          
-            }
-        }
+//Editar e Excluir:
 
-        // 3. UPDATE - Função que envia o PUT para a API *********
-        async function updateNoticia(e) {
-            e.preventDefault(); // Impede o HTML de recarregar a página inteira
+function prepararEdit(id) {
+  const noticia = localNoticias.find(n => n.id === id);
+  if (noticia) {
+    noticiaForm.classList.remove('oculto');
+    mensagem.innerHTML = 'Informe os dados que serão alterados';
+
+    noticiaIdInput.value = noticia.id;
+    noticiaTitleInput.value = noticia.nome;
+    noticiaBodyInput.value = noticia.comentario;
+  }
+}
+
+
+async function updateNoticia(e) {
+  e.preventDefault();
             
-            const id = noticiaIdInput.value;
-            const noticiaData = {
-                titulo: noticiaTitleInput.value,
-                corpo: noticiaBodyInput.value
-            };
+  const id = noticiaIdInput.value;
+  const noticiaData = {
+    titulo: noticiaTitleInput.value,
+    corpo: noticiaBodyInput.value
+  };
 
-            try {
-                const url = `${API_URL}?id=eq.${id}`;
-                const response = await fetch(url, {
-                    method: 'PATCH',
-                    headers: {    
-                         apikey: PUBLISHABLE_KEY,
-                        'Content-Type': 'application/json',  
-                         Prefer:'return=representation'
-                    },
-                    body: JSON.stringify(noticiaData)
-                });
-                const updatedNoticia = await response.json();
+  try {
+    const url = `${API_URL}?id=eq.${id}`;
+    const response = await fetch(url, {
+      method: 'PATCH',
+        headers: {    
+          apikey: PUBLISHABLE_KEY,
+          'Content-Type': 'application/json',  
+          Prefer:'return=representation'
+        },
+        body: JSON.stringify(noticiaData)
+      });
+    const updatedNoticia = await response.json();
                 
-                noticiaForm.classList.add('oculto');
-                noticiasContainer.classList.remove('oculto');
-                mensagem.innerHTML = `Notícia alterada com sucesso!<br>
-                                    Escolha outra notícia para editar.`;
-                buscarNoticias(); // Atualiza a lista de notícias após a alteração
-            } catch (error) {
-                console.error('Erro ao alterar notícia:', error);
-            }
-        }
-
-            async function deletarNoticia(id) {
-
-            if (!confirm('Deseja realmente excluir esta notícia?')) return;
-
-            try {
-                const url = `${API_URL}?id=eq.${id}`;
-                let resposta = await fetch(url, {
-                    method: 'DELETE',
-                    headers: {
-                        apikey: SUPABASE_PUBLISHABLE_KEY
-                    }
-                    
-                });
-               mensagem.innerHTML = `Notícia excluída com sucesso! <br>
-                                    Escolha outra notícia para excluir.`;       
-               buscarNoticias();
-                                } catch (error) {
-                console.error('Erro ao excluir notícia:', error);
-            }
-        }
+    noticiaForm.classList.add('oculto');
+    noticiasContainer.classList.remove('oculto');
+    mensagem.innerHTML = `Notícia alterada com sucesso!<br>Escolha outra notícia para editar.`;
+    buscarNoticias();
+  } catch (error) {
+    console.error('Erro ao alterar notícia:', error);
+  }
+}
 
 
+async function deletarNoticia(id) {
+  if (!confirm('Deseja realmente excluir esta notícia?')) return;
 
+  try {
+    const url = `${API_URL}?id=eq.${id}`;
+    let resposta = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY
+      }
+    });
+    mensagem.innerHTML = `Notícia excluída com sucesso! <br>Escolha outra notícia para excluir.`;       
+               
+    buscarNoticias();
+  } catch (error) {
+    console.error('Erro ao excluir notícia:', error);
+  }
+}
 
-
-
-
-
-
-
-        buscarNoticias();
+buscarNoticias();
