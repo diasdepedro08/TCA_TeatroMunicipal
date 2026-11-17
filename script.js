@@ -146,6 +146,8 @@ function prepararEdit(id) {
     comentID.value = noticia.id;
     names.value = noticia.nome;
     coment.value = noticia.comentario;
+
+    comentarios.scrollIntoView({ behavior: 'smooth' });
   }
 }
 

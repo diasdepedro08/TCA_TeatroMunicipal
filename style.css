@@ -172,7 +172,7 @@ textarea{
  button { 
     cursor: pointer; 
     background-color: #007bff; 
-    color: white; 
+    color: #F2F2F2; 
     border: none;
     padding: 8px;
 }
@@ -205,10 +205,10 @@ footer div{
     align-items: center;
     font-size: 16px;
 
-    a{color: #F2F2F2; text-decoration: none;}
     a:hover{text-decoration: underline #F2F2F2 1px;}
 }
 
+a{color: #F2F2F2; text-decoration: none;}
 
 /*--------------------------BOTÕES---------------------------------*/
 
