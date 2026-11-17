@@ -49,12 +49,10 @@ const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
 const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
 
-//FORMULARIOS:
-const noticiaForm = document.querySelector('#noticiaForm');
 const comentarios = document.querySelector('#comentarios');
 
 const comentID = document.querySelector('#comentID');
-const name = document.querySelector('#name');
+const names = document.querySelector('#name');
 const mail = document.querySelector('#mail');
 const coment = document.querySelector('#coment');
 
@@ -73,8 +71,7 @@ async function criarNoticia(e) {
   e.preventDefault(); 
 
   const noticiaData = {
-    id: comentID.value,
-    nome: name.value,
+    nome: names.value,
     email: mail.value,
     comentario: coment.value
   };
@@ -92,6 +89,7 @@ async function criarNoticia(e) {
     const newNoticia = await response.json();
     mensagem.innerHTML = `Notícia criada com sucesso!<br>Preencha o formulário novamente para criar outra notícia.`;
     comentarios.reset();
+    buscarNoticias();
   } catch (error) {
     console.error('Erro ao criar notícia:', error);
   }
@@ -100,7 +98,7 @@ async function criarNoticia(e) {
 
 //Editar e Excluir:
         
-noticiaForm.addEventListener('submit', updateNoticia);
+comentarios.addEventListener('submit', updateNoticia);
         
 
 async function buscarNoticias() {
@@ -142,11 +140,11 @@ function renderNoticias() {
 function prepararEdit(id) {
   const noticia = localNoticias.find(n => n.id === id);
   if (noticia) {
-    noticiaForm.classList.remove('oculto');
+    comentarios.classList.remove('oculto');
     mensagem.innerHTML = 'Informe os dados que serão alterados';
 
     comentID.value = noticia.id;
-    name.value = noticia.nome;
+    names.value = noticia.nome;
     coment.value = noticia.comentario;
   }
 }
@@ -157,8 +155,8 @@ async function updateNoticia(e) {
             
   const id = comentID.value;
   const noticiaData = {
-    titulo: name.value,
-    corpo: coment.value
+    nome: names.value,
+    comentario: coment.value
   };
 
   try {
@@ -174,7 +172,7 @@ async function updateNoticia(e) {
       });
     const updatedNoticia = await response.json();
                 
-    noticiaForm.classList.add('oculto');
+    comentarios.classList.add('oculto');
     noticiasContainer.classList.remove('oculto');
     mensagem.innerHTML = `Notícia alterada com sucesso!<br>Escolha outra notícia para editar.`;
     buscarNoticias();
