@@ -43,8 +43,8 @@ header nav {
     position: absolute;
     background-color: #f9f9f9;
     list-style: none;
-    padding: 0.5px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    padding: 0px;
+    box-shadow: 3px 3px 8px rgb(60, 60, 60);
     border-radius: 15px;
     min-width: 150px;
 }
@@ -66,7 +66,7 @@ header nav {
   display: none;
 }
 
-header span {
+span {
   display: block;
   width: 100%;
   height: 4px;
@@ -108,7 +108,7 @@ nav{
 
 .assuntos{
     background-color: #F2F2F2;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    box-shadow: 3px 3px 8px rgb(60, 60, 60);
     margin: 5vw;
     border-radius: 15px;
 
@@ -120,12 +120,17 @@ nav{
 }
 
 h2{
-    background-color: #01d104;
+    background-color: #4e8d4e;
+    color: #efebc6;
     margin: 0;
     padding: 0.75rem;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
+.h2azul{background-color: #375da6;}
+.h2laranja{background-color: #d96826;}
+.h2amarelo{background-color: #ffac00;}
 
 
 /*--------------------------COMENTARIOS---------------------------------*/
@@ -161,7 +166,6 @@ textarea{
     background-color: rgb(192, 192, 192);
     border: none;
     padding: 1rem;
-    margin: 1rem;
     border-radius: 0.5rem;
     resize: none;
 }
@@ -172,11 +176,14 @@ textarea{
     color: #F2F2F2; 
     border: none;
     padding: 10px;
-    width: 200px;
+    border-radius: 8px;
 }
 
 button:hover { background-color: #0056b3; cursor: pointer; }
-
+.btn-edit { background-color: #ffc107; }
+.btn-delete { background-color: #dc3545; }
+#mensagem { color: green; font-weight: bold; }
+.oculto { display: none; }
 
 
 /*--------------------------TUDO DO FOOTER---------------------------------*/
@@ -228,44 +235,38 @@ a{color: #F2F2F2; text-decoration: none;}
 .letramaior::first-letter{font-size: 32px;}
 
 
-#mensagem { 
-    color: green; 
-    font-weight: bold; 
-}
-
-.oculto { display: none; }
 
 
 form { 
     display: flex; 
     flex-direction: column;
-    margin-bottom: 20px; 
-    padding: 15px; 
-    border: 1px solid #ccc; 
 }
-        
-
-.btn-edit { background-color: #ffc107; }
-.btn-delete { background-color: #dc3545; }
-
 
 fieldset {
   display: flex;
   flex-direction: column;
+  border-radius: 15px;
+  border: #1f1f1f solid 1.5px;
 }
+
+legend{ color: #1f1f1f; margin-left: 1rem;}
 
 #indicativa label{
     display: flex;
     align-items: center;
-    gap: 0px;
-}
-
-label input[type="radio"] {
-    margin: 0;
-}
-
-#indicativa label{
     background-color: #F2F2F2;
-    padding: 8px;
     border-radius: 15px;
+    width: 250px;
+    margin-block: 4px;
+}
+
+#indicativa{
+    background-color: rgb(192, 192, 192);
+    border: none;
+    border-radius: 15px;
+}
+
+input[type="radio"]{
+    width: 30px;
+    margin-left: 5px;
 }

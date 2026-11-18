@@ -120,7 +120,7 @@ function rendercoments() {
   localNoticias.forEach(Comentarios => {
   postados.innerHTML += `
     <div id="noticia-${Comentarios.id}">
-      <h3>${Comentarios.nome}</h3>
+      <h3>${Comentarios.nome}:</h3>
       <p>${Comentarios.comentario}</p>
     </div>`;
   });
@@ -157,7 +157,7 @@ function renderNoticias() {
   localNoticias.forEach(Comentarios => {
   noticiasContainer.innerHTML += `
     <div class="noticia-card" id="noticia-${Comentarios.id}">
-      <h3>${Comentarios.nome}</h3>
+      <h3>${Comentarios.nome}:</h3>
       <p>${Comentarios.comentario}</p>
 
       <div class="actions">
