@@ -45,14 +45,15 @@ header nav {
     list-style: none;
     padding: 0px;
     box-shadow: 3px 3px 8px rgb(60, 60, 60);
-    border-radius: 15px;
+    border-radius: 10px;
+    overflow: hidden;
     min-width: 150px;
 }
 
     ul li a {
         display: block;
         padding: 6px;
-        margin-block: 8px;
+        margin-block: 16px;
         color: #333;
         text-decoration: none;
     }
@@ -111,6 +112,7 @@ nav{
     box-shadow: 3px 3px 8px rgb(60, 60, 60);
     margin: 5vw;
     border-radius: 15px;
+    overflow: hidden;
 
     p{
         font-size: 18px;
@@ -124,13 +126,11 @@ h2{
     color: #efebc6;
     margin: 0;
     padding: 0.75rem;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 .h2azul{background-color: #375da6;}
 .h2laranja{background-color: #d96826;}
-.h2amarelo{background-color: #ffac00;}
+.h2amarelo{background-color: #522e6b;}
 
 
 /*--------------------------COMENTARIOS---------------------------------*/
@@ -150,6 +150,7 @@ h2{
     border: none;
     box-shadow: 5px 5px 10px black;
     padding: 0px;
+    overflow: hidden;
 }
 
 input{
