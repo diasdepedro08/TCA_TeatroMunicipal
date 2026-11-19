@@ -246,13 +246,14 @@ fieldset {
   flex-direction: column;
   border-radius: 15px;
   border: #1f1f1f solid 1.5px;
-  gap: 32px;
+  gap: 16px;
 }
 
 legend{ color: #1f1f1f; margin-left: 1rem;}
 
 #indicativa label{
     display: flex;
+    flex-direction: row;
     align-items: center;
     background-color: #F2F2F2;
     border-radius: 15px;
@@ -270,4 +271,9 @@ legend{ color: #1f1f1f; margin-left: 1rem;}
 input[type="radio"]{
     width: 30px;
     margin-left: 5px;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
 }

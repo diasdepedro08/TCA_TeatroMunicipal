@@ -29,15 +29,86 @@
     <form>
 
         <fieldset>
-            <legend><h1>Espetáculo:</h1></legend>
+            <legend><h1>Proponente:</h1></legend>
+
+            <label for="proponente">Nome do proponente:
+                <input type="text" placeholder="Nome completo:" id="proponente" required>
+            </label>
+
+            <label for="cpf">CPF:
+                <input type="text" placeholder="xxx.xxx.xxx-xx" id="cpf">
+            </label>
+
+            <label for="coletivo">Grupo(caso tenha):
+                <input type="text" placeholder="Coletivos, escolas, etc." id="coletivo">
+            </label>
+        
+            <label for="cnpj">CNPJ(caso tenha):
+                <input type="text" placeholder="xxxx-xx" id="cnpj">
+            </label>
+            
+            <label for="email">Email:
+                <input type="email" placeholder="seuemail@xxx.com" id="email">
+            </label>
+
+            <label for="email">Telefone:
+                <input type="tel" placeholder="+00 0000-0000" id="telefone">
+            </label>
+
+            <label>Inscrição como:
+                <fieldset id="indicativa">
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>Pessoa Física</p>
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>Pessoa Jurídica</p>
+                    </label>
+    
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>Grupo coletivo sem CNPJ</p>
+                    </label>
+                </fieldset>
+            </label>
+
+            <label>Em caso de cotas, selecione abaixo:
+                <fieldset id="indicativa">
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>Negra</p>
+                    </label>
+                        
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>Trans</p>
+                    </label>
+        
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>Indigena</p>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="inscricao" id="inscricao">
+                        <p>PCD</p>
+                    </label>
+                </fieldset>
+            </label>
+
+            <label for="curriculo">Curriculo do Artista/Grupo/Coletivo proponente:
+                <textarea name="Curriculo" id="curriculo"></textarea>
+            </label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend><h1>Proposta:</h1></legend>
 
             <label for="titulo">Titulo da Proposta:
                 <input type="text" placeholder="Titulo:" id="titulo" required>
-            </label>
-            
-
-            <label for="coletivo">Nome do grupo:
-                <input type="text" placeholder="Coletivos, escolas, etc." id="titulo" required>
             </label>
             
 
@@ -86,39 +157,7 @@
             
         </fieldset>
 
-        <fieldset>
-            <legend><h1>Ficha Técnica:</h1></legend>
-            
-            <label for="direcao">Direção:
-                <input type="text" placeholder="Diretor:" id="direcao">
-            </label>
-            
-
-            <label for="iluminacao">Iluminação:
-                <input type="text" placeholder="Iluminador:" id="iluminacao">
-            </label>
-            
-
-            <label for="sonoplastia">Sonoplastia:
-                <input type="text" placeholder="Sonoplasta:" id="sonoplastia" required>
-            </label>
-            
-
-            <label for="cenografia">Cenografia:
-                <input type="text" placeholder="Cenógrafo:" id="cenografia" required>
-            </label>
-            
-
-            <label for="figurino">Figurino:
-                <input type="text" placeholder="Figurinista:" id="figurino" required>
-            </label>
-            
-
-            <label for="maquiagem">Caracterização:
-                <input type="text" placeholder="Maquiador:" id="maquiagem" required>
-            </label>
-            
-        </fieldset>
+        <button type="submit" id="submit_evento">Enviar</button>
 
     </form>
 

@@ -5,6 +5,8 @@ CREATE DATABASE banco_teatro;
 \c banco_teatro;
 
 -- Tabelas
+-- git config --local user.name "Pedro"
+-- git config --local user.email "..."
 
 
 CREATE TABLE coletivo(
@@ -58,14 +60,3 @@ CREATE TABLE pecas (
     id_coletivo integer not null,
     id_ficha tecnica integer not null
 );
-
-
--- INSERTS PADRAO
-
-INSERT INTO genero (id, genero)
-VALUES
-(1, comedia)
-(2, drama)
-(3, tragedia)
-(4, romance)
-(5, fantasia)
