@@ -281,16 +281,19 @@ label{
 table {
     width: 100%;
     max-width: 800px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 th, td {
     text-align: left;
-
 }
 
 .col-num {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
-    width: 20px;
+}
+
+td input{
+    width: 20vw;
+
 }

@@ -111,6 +111,10 @@
                 <input type="text" placeholder="Titulo:" id="titulo" required>
             </label>
 
+            <label for="duracao">Duração:
+                <input type="text" placeholder="Ex: 90 min" id="duracao">
+            </label>
+
             <label>Classificação indicativa:
                 <fieldset id="indicativa">
                     <label>
@@ -149,7 +153,8 @@
                 <textarea name="Sinopse" id="sinopse"></textarea>
             </label>
 
-        <table id="tabelaEquipe">
+            <label>Ficha da Equipe principal:
+            <table id="tabelaequipe">
             <thead>
             <tr>
             <th class="col-num">#</th>
@@ -173,27 +178,52 @@
             </tr>
             </tbody>
         </table>
+            </label>
 
-  <button type="button" onclick="novalinha()">+ Adicionar Linha</button>
+        <button type="button" onclick="novalinha()">+ Adicionar Linha</button>
             
         </fieldset>
 
 
 
         <fieldset>
-            <legend><h1>Tempo???:</h1></legend>
+            <legend><h1>Sessões:</h1></legend>
 
-            <label for="datas">Data da sessão:
-                <input type="date" placeholder="Ex: dd/mm" id="datas">
-            </label>
+            <table id="tabeladatas">
+            <thead>
+            <tr>
+                <th class="col-num">#</th>
+                <th><label>Data:</label></th>
+                <th><label>Horário:</label></th>
+                <th><label>Ingressos:</label></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="col-num">1</td>
+                <td> <input type="date" id="datas"></td>
+                <td><input type="text" placeholder="Ex: 00:00" id="horario"></td>
+                <td><input type="text" placeholder="Solidário, Gratuito, XX,XX"></td>
+            </tr>
+            <tr>
+                <td class="col-num">2</td>
+                <td> <input type="date" id="datas"></td>
+                <td><input type="text" placeholder="Ex: 00:00" id="horario"></td>
+                <td><input type="text" placeholder="Solidário, Gratuito, XX,XX"></td>
+            </tr>
+            </tbody>
+        </table>
 
-            <label for="datas">Horários da sessão:
-                <input type="date" placeholder="Ex: dd/mm" id="datas">
-            </label>
+        <button type="button" onclick="novadata()">+ Adicionar Sessão</button>
 
-            <label for="duracao">Tempo da Sessão:
-                <input type="text" placeholder="Ex: 90 min" id="duracao">
-            </label>
+        <label for="chegada">Montagem/Chegada:
+            <input type="text" placeholder="Dia e horário" id="chegada">
+        </label>
+
+        <label for="saida">Desmontagem/Saída:
+            <input type="text" placeholder="Dia e horário" id="saida">
+        </label>
+
             
 
 
