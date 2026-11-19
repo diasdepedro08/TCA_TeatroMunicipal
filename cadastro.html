@@ -110,12 +110,6 @@
             <label for="titulo">Titulo da Proposta:
                 <input type="text" placeholder="Titulo:" id="titulo" required>
             </label>
-            
-
-            <label for="duracao">Tempo da Sessão:
-                <input type="number" placeholder="Ex: 90 min" id="duracao">
-            </label>
-            
 
             <label>Classificação indicativa:
                 <fieldset id="indicativa">
@@ -154,9 +148,60 @@
             <label for="sinopse">Sinopse:
                 <textarea name="Sinopse" id="sinopse"></textarea>
             </label>
+
+        <table id="tabelaEquipe">
+            <thead>
+            <tr>
+            <th class="col-num">#</th>
+            <th><label>Nome</label></th>
+            <th><label>Função</label></th>
+            <th><label>Currículo</label></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td class="col-num">1</td>
+            <td><input type="text" name="nome[]" placeholder="Digite o nome"></td>
+            <td><input type="text" name="funcao[]" placeholder="Digite a função"></td>
+            <td><input type="text" name="curriculo[]" placeholder="Link ou resumo"></td>
+            </tr>
+            <tr>
+            <td class="col-num">2</td>
+            <td><input type="text" name="nome[]" placeholder="Digite o nome"></td>
+            <td><input type="text" name="funcao[]" placeholder="Digite a função"></td>
+            <td><input type="text" name="curriculo[]" placeholder="Link ou resumo"></td>
+            </tr>
+            </tbody>
+        </table>
+
+  <button type="button" onclick="novalinha()">+ Adicionar Linha</button>
             
         </fieldset>
 
+
+
+        <fieldset>
+            <legend><h1>Tempo???:</h1></legend>
+
+            <label for="datas">Data da sessão:
+                <input type="date" placeholder="Ex: dd/mm" id="datas">
+            </label>
+
+            <label for="datas">Horários da sessão:
+                <input type="date" placeholder="Ex: dd/mm" id="datas">
+            </label>
+
+            <label for="duracao">Tempo da Sessão:
+                <input type="text" placeholder="Ex: 90 min" id="duracao">
+            </label>
+            
+
+
+            
+
+            
+        </fieldset>
+        
         <button type="submit" id="submit_evento">Enviar</button>
 
     </form>
