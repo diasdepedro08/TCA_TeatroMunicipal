@@ -8,40 +8,31 @@ CREATE DATABASE banco_teatro;
 -- git config --local user.name "Pedro"
 -- git config --local user.email "..."
 
-
-CREATE TABLE coletivo(
-    id integer not null,
-    coletivo varchar(50) not null,
-    responsavel varchar(100) not null,
-    cidade varchar(100) not null,
-    email varchar(200) not null,
-    telefone varchar(20) not null
+CREATE TABLE inscricao (
+    id primary key integer not null,
+    insc_como varchar(50) not null
 );
 
+CREATE TABLE cota (
+    id primary key integer not null,
+    cota varchar(50) not null
+);
 
-CREATE TABLE artistas (
-    id integer not null,
+CREATE TABLE proponente (
+    id primary key integer,
     nome varchar(100) not null,
-    cpf integer not null,
-    contato varchar(100) not null
-);
+    cpf varchar not null,
+    grupo varchar(50),
+    cnpj varchar,
+    email varchar,
+    telefone varchar,
+    inscricao_id
+    cota_id
+    curriculo text not null
+)
 
 
-CREATE TABLE ficha_tecnica (
-    id integer not null,
-    direcao varchar(100) not null,
-    elenco integer not null references artistas(id),
-    iluminacao varchar(100) not null,
-    sonoplastia varchar(100) not null,
-    figurino varchar(100) not null,
-    caracterizacao varchar(100) not null
-);
 
-
-CREATE TABLE genero (
-    id integer not null,
-    genero varchar (50) not null
-);
 
 
 CREATE TABLE publico (
@@ -50,13 +41,11 @@ CREATE TABLE publico (
 );
 
 
-CREATE TABLE pecas (
+CREATE TABLE evento (
     id integer not null,
     titulo varchar(50) not null,
-    genero varchar(50) not null,
-    publico varchar(50) not null,
+    proponente_id integer not null,
     duracao integer not null,
+    publico_id varchar(50) not null,
     sinopse text not null,
-    id_coletivo integer not null,
-    id_ficha tecnica integer not null
 );
