@@ -13,7 +13,7 @@ CREATE TABLE inscricao (
     insc_como varchar(50) not null
 );
 
-CREATE TABLE cota (
+CREATE TABLE cotas (
     id serial primary key,
     cota varchar(50) not null
 );
@@ -27,7 +27,7 @@ CREATE TABLE proponente (
     email varchar,
     telefone varchar,
     inscricao_id integer not null references inscricao(id),
-    cota_id integer not null references cota(id),
+    cota_id integer not null references cotas(id),
     curriculo text not null
 );
 
