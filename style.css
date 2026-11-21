@@ -56,10 +56,16 @@ header nav {
         margin-block: 16px;
         color: #333;
         text-decoration: none;
+        text-align: left;
     }
 
     ul li a:hover {
         background-color: #ddd;
+    }
+
+    h2{
+        background-color: #3f3f3f;
+        color: #F2F2F2;
     }
 }
 
@@ -151,6 +157,8 @@ h2{
     box-shadow: 5px 5px 10px black;
     padding: 0px;
     overflow: hidden;
+
+    button{width: 150px; margin-left: 8px; margin-bottom: 8px;}
 }
 
 input{
@@ -160,6 +168,7 @@ input{
     padding: 12px;
     background-color: rgb(192, 192, 192);
     border: none;
+    margin: 8px;
 }
 
 textarea{
@@ -169,6 +178,7 @@ textarea{
     padding: 1rem;
     border-radius: 0.5rem;
     resize: none;
+    margin: 8px;
 }
 
  button { 
@@ -185,6 +195,7 @@ button:hover { background-color: #0056b3; cursor: pointer; }
 .btn-delete { background-color: #dc3545; }
 #mensagem { color: green; font-weight: bold; }
 .oculto { display: none; }
+#submit_evento {width: 200px; align-self: center; margin-top: 16px;}
 
 
 /*--------------------------TUDO DO FOOTER---------------------------------*/
@@ -246,7 +257,7 @@ fieldset {
   flex-direction: column;
   border-radius: 15px;
   border: #1f1f1f solid 1.5px;
-  gap: 16px;
+  gap: 8px;
 }
 
 legend{ color: #1f1f1f; margin-left: 1rem;}
@@ -266,6 +277,8 @@ legend{ color: #1f1f1f; margin-left: 1rem;}
     border: none;
     border-radius: 15px;
     gap: 0px;
+    max-width:max-content;
+    margin: 8px;
 }
 
 input[type="radio"]{
@@ -281,7 +294,7 @@ label{
 table {
     width: 100%;
     max-width: 800px;
-    margin-bottom: 8px;
+    margin: 8px;
 }
 
 th, td {
@@ -295,5 +308,5 @@ th, td {
 
 td input{
     width: 20vw;
-
+    margin: 0px;
 }

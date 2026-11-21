@@ -98,7 +98,7 @@
                 </fieldset>
             </label>
 
-            <label for="curriculo">Curriculo do Artista/Grupo/Coletivo proponente:
+            <label for="curriculo">Currículo do Artista/Grupo/Coletivo proponente:
                 <textarea name="Curriculo" id="curriculo" required></textarea>
             </label>
 
@@ -107,7 +107,7 @@
         <fieldset>
             <legend><h1>Proposta:</h1></legend>
 
-            <label for="titulo">Titulo da Proposta:
+            <label for="titulo">Título da Proposta:
                 <input type="text" placeholder="Titulo:" id="titulo" required>
             </label>
 
@@ -132,6 +132,11 @@
                         <p>Maiores de 10 anos</p>
                     </label>
     
+                    <label>
+                        <input type="radio" name="publico" id="publico">
+                        <p>Maiores de 12 anos</p>
+                    </label>
+
                     <label>
                         <input type="radio" name="publico" id="publico">
                         <p>Maiores de 14 anos</p>
@@ -177,18 +182,17 @@
             <td><input type="text" name="curriculo[]" placeholder="Link ou resumo"></td>
             </tr>
             </tbody>
-        </table>
+            </table>
             </label>
 
-        <button type="button" onclick="novalinha()">+ Adicionar Linha</button>
+            <button type="button" onclick="novalinha()">+ Adicionar Linha</button>
             
         </fieldset>
-
-
 
         <fieldset>
             <legend><h1>Sessões:</h1></legend>
 
+            <label>
             <table id="tabeladatas">
             <thead>
             <tr>
@@ -212,23 +216,18 @@
                 <td><input type="text" placeholder="Solidário, Gratuito, XX,XX"></td>
             </tr>
             </tbody>
-        </table>
+            </table>
+            </label>
 
-        <button type="button" onclick="novadata()">+ Adicionar Sessão</button>
+            <button type="button" onclick="novadata()">+ Adicionar Sessão</button>
 
-        <label for="chegada">Montagem/Chegada:
-            <input type="text" placeholder="Dia e horário" id="chegada" required>
-        </label>
+            <label for="chegada">Montagem/Chegada:
+                <input type="text" placeholder="Dia e horário" id="chegada" required>
+            </label>
 
-        <label for="saida">Desmontagem/Saída:
-            <input type="text" placeholder="Dia e horário" id="saida" required>
-        </label>
-
-            
-
-
-            
-
+            <label for="saida">Desmontagem/Saída:
+                <input type="text" placeholder="Dia e horário" id="saida" required>
+            </label>
             
         </fieldset>
         
