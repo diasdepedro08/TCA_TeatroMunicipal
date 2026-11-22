@@ -17,14 +17,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Memória Teatral Rio Grande</title>
+    <title>Museu Online - Teatro Municipal</title>
 </head>
 
 <body>
     <meu-header id="Bem-vindo"></meu-header>
-    <img src="img/banner_museu.png" alt="banner_museu" id="banner">
-
+    
     <nav>
+        <img src="img/banner_museu.png" alt="banner_museu" id="banner">
         <p id="p1">Bem-vindo ao MUSEU ONLINE! Conheça histórias de antigos teatros e grupos locais de Rio Grande.</p>
 
         <div>
@@ -38,37 +38,35 @@
     <main>
         <section id="Antigos Teatros" class="assuntos">
             <h2>Os 13 antigos teatros</h2>
-            <p></p>
+            <p class="letramaior"><b>Theatro Sete de Setembro:</b><br>Inaugurado em 7 de setembro de 1832, o Teatro Sete de Setembro era considerado um marco para a cidade do Rio Grande e para o estado do Rio Grande do Sul, registraram as pesquisadoras Lara Freitas de Oliveira e Vivian da Silva Paulitsch, no artigo Entre os edifícios teatrais e o fazer cênico: um panorama histórico do Teatro em Rio Grande/RS (2021). Foi considerado o primeiro teatro construído em alvenaria, dessas localidades, e possuía um estilo arquitetônico distinto das construções da época, descrevem. O teatro foi construído na rua do Príncipe, atual General Bacelar, com saída para a atual praça Júlio de Castilhos. A iniciativa foi da Sociedade Sete de Setembro, “composta pelas famílias mais abastadas da cidade que, posteriormente, viriam a ter seus camarotes exclusivos”. Conforme descrições encontradas, a construção exibia linhas arquitetônicas que seguiam a transição da arquitetura tradicional luso-brasileira e o neo-clássico. Ao longo dos anos passou por várias reformas e reinaugurações, também chegou a ser rebatizado recebendo os nomes de Cine Parisiense e Cine Independência, em 1926.</p>
+            <p class="letramaior"><b>Cine Teatro Carlos Gomes:</b><br>Inaugurado em 1º de fevereiro de 1922. O prédio foi mandado construir pela empresa proprietária Andreassi, Rios & Cia. Sua fachada original foi derrubada em 1928 e na sua reconstrução adotou-se o estilo eclético. O andar superior do prédio se mantém original, ao centro, três vitrais iluminavam o ambiente interno, sobre eles figura a epígrafe “Cine-Theatro Carlos Gomes” e o busto do compositor instalado em um nicho emoldurado por um festão.</p>
         </section>
         <br>
 
         <section id="assunto2" class="assuntos">
-            <h2 class="h2laranja">Cine Teatro Carlos Gomes</h2>
-            <p class="letramaior"><b>Cine Teatro Carlos Gomes:</b><br> O Cine Teatro Carlos Gomes foi inaugurado em 1º de fevereiro de 1922. O prédio foi mandado construir pela empresa proprietária Andreassi, Rios & Cia. Sua fachada original foi derrubada em 1928 e na sua reconstrução adotou-se o estilo eclético. O andar superior do prédio se mantém original, ao centro, três vitrais iluminavam o ambiente interno, sobre eles figura a epígrafe “Cine-Theatro Carlos Gomes” e o busto do compositor instalado em um nicho emoldurado por um festão.</p>
+            <h2 class="h2laranja">Grupos de Teatro</h2>
+            <p>Trabalhando sobre...</p>
         </section>
         <br>
 
         <section id="assunto3" class="assuntos">
-            <h2 class="h2amarelo">Theatro Sete de Setembro</h2>
-            <p class="letramaior"><b>Theatro Sete de Setembro:</b><br>Inaugurado em 7 de setembro de 1832, o Teatro Sete de Setembro era considerado um marco para a cidade do Rio Grande e para o estado do Rio Grande do Sul, registraram as pesquisadoras Lara Freitas de Oliveira e Vivian da Silva Paulitsch, no artigo Entre os edifícios teatrais e o fazer cênico: um panorama histórico do Teatro em Rio Grande/RS (2021). Foi considerado o primeiro teatro construído em alvenaria, dessas localidades, e possuía um estilo arquitetônico distinto das construções da época, descrevem. O teatro foi construído na rua do Príncipe, atual General Bacelar, com saída para a atual praça Júlio de Castilhos. A iniciativa foi da Sociedade Sete de Setembro, “composta pelas famílias mais abastadas da cidade que, posteriormente, viriam a ter seus camarotes exclusivos”. Conforme descrições encontradas, a construção exibia linhas arquitetônicas que seguiam a transição da arquitetura tradicional luso-brasileira e o neo-clássico. Ao longo dos anos passou por várias reformas e reinaugurações, também chegou a ser rebatizado recebendo os nomes de Cine Parisiense e Cine Independência, em 1926.</p>
-
+            <h2 class="h2amarelo">Espaço Vazio</h2>
+            <p>Trabalhando sobre...</p>
         </section>
         <br>
 
         <section id="assunto4" class="assuntos">
-            <h2 class="h2azul">Cine-Teatro Glória</h2>
-            <p>Cine-Teatro Glória numa de suas noites de Avant-Premiere. Um cinema construído em 1955 pela Empresa Francisco Cupello S.A e pertencente ao Circuito Cinematográfico Glória.</p>
+            <h2 class="h2azul">Galeria</h2>
+            <p>Trabalhando sobre...</p>
         </section>
         
         <br>
-
-        <a href="#Bem-vindo" id="ini"><img src="img/seta.png" alt="Minha Imagem" onmouseover="this.src='img/setahover.png'" onmouseout="this.src='img/seta.png'"></a>
-
 
         <section class="comentarios">
 
             <form id="comentarios">
                 <h2>Comente:</h2>
+                <div id="mensagem">Preencha os dados para criar uma nova notícia.</div>
 
                 <input type="hidden" id="comentID">
                 
@@ -81,8 +79,6 @@
                 <button type="submit" id="submitBtn">Enviar</button>
                 <button><a href="crud.html">Editar/Excluir</a></button>
             </form>
-
-            <div id="mensagem">Preencha os dados para criar uma nova notícia.</div>
             
             <section class="assuntos">
                 <h2 class="h2laranja">Comentários:</h2>
@@ -94,6 +90,7 @@
     </main>
     <br>
 
+    <botao-topo></botao-topo>
     <meu-footer></meu-footer>
 
     <script src="script.js"></script>

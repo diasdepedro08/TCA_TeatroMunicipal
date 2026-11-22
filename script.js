@@ -42,6 +42,14 @@ class MeuFooter extends HTMLElement {
  }
  customElements.define('meu-footer', MeuFooter);
 
+ class Topo extends HTMLElement {
+  constructor() {
+  super();
+  this.innerHTML = `<a href="#Bem-vindo" id="ini"><img src="img/seta.png" alt="Minha Imagem" onmouseover="this.src='img/setahover.png'" onmouseout="this.src='img/seta.png'"></a>`;
+  }
+ }
+ customElements.define('botao-topo', Topo);
+
 //--------------------------------------------------------------------------------------------------
 
 
