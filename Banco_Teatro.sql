@@ -31,6 +31,20 @@ CREATE TABLE proponente (
     curriculo text not null
 );
 
+CREATE TABLE publico (
+    id serial primary key,
+    publico varchar(50) not null
+);
+
+CREATE TABLE evento (
+    id serial primary key,
+    titulo varchar(50) not null,
+    proponente_id integer not null,
+    duracao integer not null,
+    publico_id integer not null references publico(id),
+    sinopse text not null,
+);
+
 CREATE TABLE equipe (
     id serial primary key,
     evento_id integer not null,
@@ -49,18 +63,4 @@ CREATE TABLE sessoes (
     montagem varchar,
     desmontagem varchar,
     FOREIGN KEY (evento_id) REFERENCES eventos(id)
-);
-
-CREATE TABLE publico (
-    id serial primary key,
-    publico varchar(50) not null
-);
-
-CREATE TABLE evento (
-    id serial primary key,
-    titulo varchar(50) not null,
-    proponente_id integer not null,
-    duracao integer not null,
-    publico_id integer not null references publico(id),
-    sinopse text not null,
 );

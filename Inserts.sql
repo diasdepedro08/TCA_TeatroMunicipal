@@ -32,7 +32,7 @@ VALUES
 ('Sancho Pança, o fiel escudeiro', 3, 60, 1, 'Internado em um manicômio por jurar ser o fiel escudeiro de Dom Quixote, o Palhaço Piruá se coloca na pele e na alma de Sancho Pança na esperança de reencontrar o valente cavaleiro de La Mancha.'),
 ('Rei Lixo', 4, 85, 6, 'A trama acompanha a decadência de um rei idoso que decide dividir o próprio reino entre suas três filhas. Iludido pela falsa adulação das duas mais velhas, Goneril e Regana, ele acaba deserdando e banindo Cordélia, a única que lhe oferece afeto sincero.');
 
-
+-- inserts dos inserts
 
 INSERT INTO equipe (evento_id, nome, funcao, curriculo)
 VALUES
@@ -54,8 +54,21 @@ VALUES
 (4, 'renato', 'ator', 'BBBBBBBBBBBBBBBBBBBB'),
 (4, 'sequervito', 'atriz', 'meu sonho era por um lorem aqui');
 
-
-
-INSERT INTO sessoes (evento_id, datas, horarios, ingressos, montagem, desmontagem)
+INSERT INTO sessoes (evento_id, datas, horarios, ingressos)
 VALUES
-(1, '2026-10-09', '14:30:00', 'R$ 15,00', '')
+(1, '2026-10-09', '14:30:00', 'R$ 15,00'),
+(1, '2026-10-09', '16:00:00', 'R$ 15,00'),
+(1, '2026-10-10', '11:00:00', 'R$ 15,00'),
+(1, '2026-10-10', '13:30:00', 'R$ 15,00'),
+
+(2, '2026-09-21', '19:00:00', 'Solidário'),
+(2, '2026-09-21', '21:00:00', 'Solidário'),
+
+(3, '2026-05-24', '20:00:00', 'Solidário'),
+
+(4, '2026-11-06', '19:30:00', 'Gratuito'),
+(4, '2026-11-06', '21:00:00', 'Gratuito'),
+(4, '2026-11-07', '19:30:00', 'Gratuito'),
+(4, '2026-11-07', '21:00:00', 'Gratuito'),
+(4, '2026-11-08', '19:30:00', 'Gratuito'),
+(4, '2026-11-08', '21:00:00', 'Gratuito'),
