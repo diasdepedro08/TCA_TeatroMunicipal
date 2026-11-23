@@ -16,12 +16,10 @@ O projeto é a base para um futuro **TCC**: o **site oficial do Teatro Municipal
 ---
  
 ## Diagrama do sistema
- 
-<div align="center">
+
 ![Diagrama do sistema](docs/Modelagem2.png)
  
-</div>
----
+
  
 ## Páginas do site
  
