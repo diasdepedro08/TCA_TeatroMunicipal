@@ -7,7 +7,7 @@ Este repositório reúne o **Trabalho de Conclusão Anual (TCA)** de **Pedro Dia
 O projeto é a base para um futuro **TCC**: o **site oficial do Teatro Municipal de Rio Grande**. O objetivo é **modernizar** a presença digital do teatro e **preservar** a história desse espaço, tão importante para a região em diversos aspectos: cultural, artístico, histórico e social.
  
 ---
- 
+
 ## Objetivos
  
 - Criar um canal oficial e moderno de comunicação do Teatro Municipal
@@ -56,10 +56,10 @@ Página administrativa ligada ao museu online.
  
 ## Próximos passos (TCC)
  
-- [ ] Sistema de notícias na página inicial
-- [ ] Agenda de peças em cartaz atualizada pelo teatro
-- [ ] Moderação e aprovação de conteúdos do museu
-- [ ] Integração com a administração do teatro
+- Sistema de notícias na página inicial
+- Agenda de peças em cartaz atualizada pelo teatro
+- Moderação e aprovação de conteúdos do museu
+- Integração com a administração do teatro
 ---
 
 ## Autor

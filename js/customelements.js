@@ -14,7 +14,7 @@ class MeuHeader extends HTMLElement {
 
       <ul>
         <li><h2>Menu:</h2></li>
-        <li><a href="principal.html">Início</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="museu.html">Museu Online</a></li>
         <li><a href="cadastro.html">Editais</a></li>
       </ul>
