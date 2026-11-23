@@ -1,3 +1,5 @@
+![Logo](img/logo.png)
+
 ## Sobre o projeto
  
 Este repositório reúne o **Trabalho de Conclusão Anual (TCA)** de **Pedro Dias de Souza**, aluno do **Instituto Federal — Campus Rio Grande**.
