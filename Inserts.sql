@@ -31,6 +31,7 @@ VALUES
 ('Dora', 2, 90, 5, 'Na peça, Grace encarna uma mulher que acreditava que sua história já estava escrita. Mas a vida provou que ainda faltavam alguns capítulos. Dora passou décadas cuidando dos outros. Dedicou-se à família, preservou suas histórias, assumiu responsabilidades e adiou desejos que pareciam poder esperar. Acreditava conhecer perfeitamente a mulher que havia se tornado e as razões que determinaram cada uma de suas escolhas. Até que as certezas que sustentavam sua existência começam a perder o lugar. É desse ponto de partida que a comédia se desdobra, transitando com naturalidade entre o riso e a emoção para falar sobre aquilo que todos carregamos: as escolhas que fazemos, as versões que construímos sobre nós mesmos e a possibilidade de transformar o próprio destino.'),
 ('Sancho Pança, o fiel escudeiro', 3, 60, 1, 'Internado em um manicômio por jurar ser o fiel escudeiro de Dom Quixote, o Palhaço Piruá se coloca na pele e na alma de Sancho Pança na esperança de reencontrar o valente cavaleiro de La Mancha.'),
 ('Rei Lixo', 4, 85, 6, 'A trama acompanha a decadência de um rei idoso que decide dividir o próprio reino entre suas três filhas. Iludido pela falsa adulação das duas mais velhas, Goneril e Regana, ele acaba deserdando e banindo Cordélia, a única que lhe oferece afeto sincero.');
+('A descoberta', 3, 40, 4, 'Retrata a descoberta do átomo pelos cientistas de uma forma comica e irreverente com diversas situações cotidianas')
 
 -- inserts dos inserts
 
@@ -52,7 +53,13 @@ VALUES
 (4, 'Kleber', 'Ator', 'KLEBEEEEEEEEEER'),
 (4, 'Kleber 2', 'diretor', 'AAAAAAAAAAAAAAAAAAA'),
 (4, 'renato', 'ator', 'BBBBBBBBBBBBBBBBBBBB'),
-(4, 'sequervito', 'atriz', 'meu sonho era por um lorem aqui');
+(4, 'sequervito', 'atriz', 'meu sonho era por um lorem aqui'),
+
+(5, 'Pedro Dias', 'Diretor', 'Ator e artista circense trabalha como humorista na cia teatral era uma vez e fantasy circus'),
+(5, 'Bruno Rodrigues', 'Musicista', 'Violonista e ator'),
+(5, 'Arthur Caçoilo', 'Ator', 'cacoilo oilo oilo oilo'),
+(5, 'Ryan Gomes', 'Ator', 'rya an an an an an na an an an an'),
+(5, 'Bianca Loureiro', 'atriz', 'Atriz da cia teatral era uma vez indicada 2 anos seguidos');
 
 INSERT INTO sessoes (evento_id, datas, horarios, ingressos)
 VALUES

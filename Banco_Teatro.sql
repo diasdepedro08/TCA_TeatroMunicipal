@@ -18,19 +18,6 @@ CREATE TABLE cotas (
     cota varchar(50) not null
 );
 
-CREATE TABLE proponente (
-    id serial primary key,
-    nome varchar(100) not null,
-    cpf varchar not null,
-    grupo varchar(50),
-    cnpj varchar,
-    email varchar,
-    telefone varchar,
-    inscricao_id integer not null references inscricao(id),
-    cota_id integer not null references cotas(id),
-    curriculo text not null
-);
-
 CREATE TABLE publico (
     id serial primary key,
     publico varchar(50) not null
@@ -42,7 +29,20 @@ CREATE TABLE evento (
     proponente_id integer not null,
     duracao integer not null,
     publico_id integer not null references publico(id),
-    sinopse text not null,
+    sinopse text not null
+);
+
+CREATE TABLE proponente (
+    id integer not null references evento(id),
+    nome varchar(100) not null,
+    cpf varchar not null,
+    grupo varchar(50),
+    cnpj varchar,
+    email varchar,
+    telefone varchar,
+    inscricao_id integer not null references inscricao(id),
+    cota_id integer not null references cotas(id),
+    curriculo text not null
 );
 
 CREATE TABLE equipe (
