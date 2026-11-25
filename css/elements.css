@@ -3,7 +3,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1f1f1f;
+    background-color: var(--corbase);
     overflow: visible;
     padding: 1rem;
     box-shadow: 0px 5px 10px -5px rgb(0, 0, 0);
@@ -87,7 +87,7 @@ footer{
     display: flex;
     flex-direction: column;
     box-shadow: 0px -5px 10px -5px rgb(0, 0, 0);
-    background-color: #1f1f1f;
+    background-color: var(--corbase);
     font-size: 12px;
     margin-top: 2rem;
     padding: 1rem;

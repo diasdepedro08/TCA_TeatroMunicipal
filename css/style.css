@@ -1,25 +1,7 @@
-
 @import url('modern-normalize.css');
 @import url('variables.css');
-@import url('customelements.css');
-
-body{
-    background-color: #e1e1e1;
-    min-height: 100vh;
-}
-
-main h1 {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-h1::before, h1::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background-color: #1f1f1f;
-}
+@import url('elements.css');
+@import url('main.css');
 
 #banner{
     width: 100%;
@@ -34,7 +16,7 @@ nav{
 
     img{
         height: auto;
-        width: 125px;
+        width: 150px;
         margin: 5px;
     }
 }
@@ -51,13 +33,6 @@ nav{
         width: 90%;
         padding: 1rem;
     }
-}
-
-h2{
-    background-color: #4e8d4e;
-    color: #efebc6;
-    margin: 0;
-    padding: 0.75rem;
 }
 
 .h2azul{background-color: #375da6;}
@@ -146,11 +121,11 @@ fieldset {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
-  border: #1f1f1f solid 1.5px;
+  border: var(--corbase) solid 1.5px;
   gap: 8px;
 }
 
-legend{ color: #1f1f1f; margin-left: 1rem;}
+legend{color: var(--corbase); margin-left: 1rem;}
 
 #indicativa label{
     display: flex;
@@ -216,11 +191,6 @@ td input{
     p{padding-inline: 16px; font-size: 12px;}
 }
 
-#vermais{
-    display: flex;
-    justify-self: center;
-}
-
 /*-------------------------------------Responsividade-------------------------------------*/
 
 @media (min-width: 768px) {
@@ -228,6 +198,7 @@ td input{
     main, nav{
         width: 80%;
         justify-self: center;
+        align-items: center;
     }
 
     #logo{
