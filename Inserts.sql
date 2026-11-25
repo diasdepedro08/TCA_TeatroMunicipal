@@ -18,6 +18,7 @@ VALUES
 
 INSERT INTO cotas (cota)
 VALUES
+('Nenhuma'),
 ('Negra'),
 ('Trans'),
 ('Indigena'),
@@ -84,12 +85,12 @@ VALUES
 
 INSERT INTO proponente (evento_id, nome, cpf, grupo, cnpj, email, telefone, inscricao_id, cota_id, curriculo)
 VALUES
-(1, 'Marlon Britto', '676.676.676-67', 'Era uma vez', null, 'ciateatraleraumavez@gmail.com', '53 6767-6767', 3, null, 'A CIA. Era uma vez a 30 anos trabalha com jovens participando dos espetáculos,  com o tempo foi necessário abrir aulas e oficinas pós turno para alunos que gostariam e não tinham oportunidades de fazer teatro. Após a pandemia a procura e animo por aulas de teatro era alta, fazendo as turmas aumentarem, assim, atualmente há 40 alunos em 3 turmas.'),
+(1, 'Marlon Britto', '676.676.676-67', 'Era uma vez', null, 'ciateatraleraumavez@gmail.com', '53 6767-6767', 3, 1, 'A CIA. Era uma vez a 30 anos trabalha com jovens participando dos espetáculos,  com o tempo foi necessário abrir aulas e oficinas pós turno para alunos que gostariam e não tinham oportunidades de fazer teatro. Após a pandemia a procura e animo por aulas de teatro era alta, fazendo as turmas aumentarem, assim, atualmente há 40 alunos em 3 turmas.'),
 
-(2, 'AgenciaABCD', '000.000.000-00', null, '0000-00', 'doraacomedia@gmail.com', '13 1313-1313', 2, null, 'ABCDABCDABCDABCDABCDABCDABCD'),
+(2, 'AgenciaABCD', '000.000.000-00', null, '0000-00', 'doraacomedia@gmail.com', '13 1313-1313', 2, 1, 'ABCDABCDABCDABCDABCDABCDABCD'),
 
 (3, 'Rodrigo Bruggeman', '333.333.333-33', 'Giracirco', '3333-33', 'pancosancho@abc.com', '99 9999-9999', 1, 1, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
 
-(4, 'Kleber slaoq', '222.222.222-22', 'Maschara', '2222-22', 'kelber@kelber.com', '22 2222-2222', 2, null, 'MASCHARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...A'),
+(4, 'Kleber slaoq', '222.222.222-22', 'Maschara', '2222-22', 'kelber@kelber.com', '22 2222-2222', 2, 1, 'MASCHARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...A'),
 
-(5, 'Pedro DIAs', '555.555.555-55', 'Pepitarts', null, 'pepitarts@hotmail.com', '53 894-3482', 1, null, 'Pedro dias ias ias ias ias ias ias ias ias ias ias ias ias iiiiaaaaassssss');
+(5, 'Pedro DIAs', '555.555.555-55', 'Pepitarts', null, 'pepitarts@hotmail.com', '53 894-3482', 1, 1, 'Pedro dias ias ias ias ias ias ias ias ias ias ias ias ias iiiiaaaaassssss');

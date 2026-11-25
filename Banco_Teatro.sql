@@ -33,7 +33,8 @@ CREATE TABLE eventos (
 );
 
 CREATE TABLE proponente (
-    id integer not null,
+    id serial primary key,
+    evento_id integer not null,
     nome varchar(100) not null,
     cpf varchar not null,
     grupo varchar(50),
@@ -43,7 +44,7 @@ CREATE TABLE proponente (
     inscricao_id integer not null references inscricao(id),
     cota_id integer not null references cotas(id),
     curriculo text not null,
-    FOREIGN KEY (id) REFERENCES eventos(id)
+    FOREIGN KEY (evento_id) REFERENCES eventos(id)
 );
 
 CREATE TABLE equipe (
