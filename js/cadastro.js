@@ -1,3 +1,86 @@
+const cadastro= document.getElementById('cadastro');
+cadastro.addEventListener('submit', cadastrar);
+        
+async function cadastrar(e) {
+  e.preventDefault(); 
+
+  const noticiaData = {
+    proponente: proponente.value,
+    cpf: cpf.value,
+    grupo: coletivo.value,
+    cnpj: cnpj.value,
+    email: email.value,
+    telefone: telefone.value,
+    inscricao_id: document.querySelector('input[name="inscricao"]:checked').value,
+    cota_id: document.querySelector('input[name="cotas"]:checked').value,
+    curriculo: curriculo.value,
+
+    titulo: titulo.value,
+    duracao: duracao.value,
+    publico: document.querySelector('input[name="publico"]:checked').value,
+    sinopse: sinopse.value,
+    //equipe:
+    
+    //sessoes:
+    montagem: chegada.value,
+    desmontagem: saida.value
+  };
+            
+  try {
+    const response = await fetch(API_URL+'eventos', {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY,
+        'Content-Type': 'application/json',
+        Prefer: 'return=representation'
+      },
+      body: JSON.stringify(noticiaData)
+    });
+    const newNoticia = await response.json();
+    mensagem.innerHTML = `Evento cadastrado com sucesso!`;
+    comentarios.reset();
+    buscarNoticias();
+  } catch (error) {
+    console.error('Erro ao cadastrar evento:', error);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function novalinha() {
   const tbody = document.querySelector("#tabelaequipe tbody");
   const n_linha = tbody.rows.length + 1;
@@ -26,44 +109,4 @@ function novadata() {
   `;
 
   tbody.appendChild(sessao);
-}
-
-//Surtos!!
-
-const cadastro= document.getElementById('cadastro');
-cadastro.addEventListener('submit', cadastrar);
-        
-async function cadastrar(e) {
-  e.preventDefault(); 
-
-  const noticiaData = {
-    proponente: proponente.value,
-    cpf: cpf.value,
-    grupo: coletivo.value,
-    cnpj: cnpj.value,
-    email: email.value,
-    telefone: telefone.value,
-    
-    inscricao_id: 
-
-    curriculo: curriculo.value
-  };
-            
-  try {
-    const response = await fetch(API_URL+'eventos', {
-      method: 'POST',
-      headers: {
-        apikey: SUPABASE_PUBLISHABLE_KEY,
-        'Content-Type': 'application/json',
-        Prefer: 'return=representation'
-      },
-      body: JSON.stringify(noticiaData)
-    });
-    const newNoticia = await response.json();
-    mensagem.innerHTML = `Evento cadastrado com sucesso!`;
-    comentarios.reset();
-    buscarNoticias();
-  } catch (error) {
-    console.error('Erro ao cadastrar evento:', error);
-  }
 }
