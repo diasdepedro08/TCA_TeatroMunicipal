@@ -1,63 +1,64 @@
+const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
+const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/"
+
 const cadastro= document.getElementById('cadastro');
 cadastro.addEventListener('submit', cadastrar);
-        
+
+
 async function cadastrar(e) {
   e.preventDefault();
 
-  const dadoscadastro = {
+    const dadosevento = {
+      titulo: titulo.value,
+      duracao: Number(duracao.value),
+      publico_id: Number(document.querySelector('input[name="publico"]:checked').value),
+      sinopse: sinopse.value
+    };
+
+    try{
+        const responseE = await fetch(`${API_URL}eventos`, {
+        method: 'POST',
+        headers: {
+            apikey: SUPABASE_PUBLISHABLE_KEY,
+            'Content-Type': 'application/json',
+            Prefer: 'return=representation'
+        },
+        body: JSON.stringify(dadosevento)
+        });
 
 
-    titulo: titulo.value,
-    duracao: Number(duracao.value),
-    publico_id: Number(document.querySelector('input[name="publico"]:checked').value),
-    sinopse: sinopse.value,
-    //equipe,
-    
-    //sessoes,
-    montagem: chegada.value,
-    desmontagem: saida.value
-  };
-            
-  try {
-    const response = await fetch(`${API_URL}eventos`, {
-      method: 'POST',
-      headers: {
-        apikey: SUPABASE_PUBLISHABLE_KEY,
-        'Content-Type': 'application/json',
-        Prefer: 'return=representation'
-      },
-      body: JSON.stringify(dadoscadastro)
-    });
+        const dadosproponente = {
+            evento_id: evento.id,
+            nome: proponente.value,
+            cpf: cpf.value,
+            grupo: coletivo.value,
+            cnpj: cnpj.value,
+            email: email.value,
+            telefone: telefone.value,
+            inscricao_id: Number(document.querySelector('input[name="inscricao"]:checked').value),
+            cota_id: Number(document.querySelector('input[name="cotas"]:checked').value),
+            curriculo: curriculo.value
+        };
 
-    if (!response.ok) throw new Error(await response.text());
-    await response.json();
+        const responseP = await fetch(`${API_URL}proponente`, {
+            method: 'POST',
+            headers: {
+                apikey: SUPABASE_PUBLISHABLE_KEY,
+                'Content-Type': 'application/json',
+                Prefer: 'return=representation'
+            },
+            body: JSON.stringify(dadosproponente)
+        });
+        if (!responseP.ok) throw new Error(await responseP.text());
+        await responseP.json();
 
-    mensagem.innerHTML = `Evento cadastrado com sucesso!`;
-    cadastro.reset();
-  } catch (error) {
+        mensagem.innerHTML = 'Evento cadastrado com sucesso!';
+        cadastro.reset();
+    } catch (error) {
     console.error('Erro ao cadastrar evento:', error);
   }
 }
-
-
-
-
-
-/*    
-    todos esses dados tem q ir pra tabela proponente
-
-    proponente: proponente.value,
-    cpf: cpf.value,
-    grupo: coletivo.value,
-    cnpj: cnpj.value,
-    email: email.value,
-    telefone: telefone.value,
-    inscricao_id: Number(document.querySelector('input[name="inscricao"]:checked').value),
-    cota_id: Number(document.querySelector('input[name="cotas"]:checked').value),
-    curriculo: curriculo.value,
-
-*/
-
 
 
 

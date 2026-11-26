@@ -26,7 +26,6 @@ CREATE TABLE publico (
 CREATE TABLE eventos (
     id serial primary key,
     titulo varchar(50) not null,
-    proponente_id integer not null,
     duracao integer not null,
     publico_id integer not null references publico(id),
     sinopse text not null

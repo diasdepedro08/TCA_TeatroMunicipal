@@ -32,7 +32,7 @@ VALUES
 ('Dora', 2, 90, 5, 'Na peça, Grace encarna uma mulher que acreditava que sua história já estava escrita. Mas a vida provou que ainda faltavam alguns capítulos. Dora passou décadas cuidando dos outros. Dedicou-se à família, preservou suas histórias, assumiu responsabilidades e adiou desejos que pareciam poder esperar. Acreditava conhecer perfeitamente a mulher que havia se tornado e as razões que determinaram cada uma de suas escolhas. Até que as certezas que sustentavam sua existência começam a perder o lugar. É desse ponto de partida que a comédia se desdobra, transitando com naturalidade entre o riso e a emoção para falar sobre aquilo que todos carregamos: as escolhas que fazemos, as versões que construímos sobre nós mesmos e a possibilidade de transformar o próprio destino.'),
 ('Sancho Pança, o fiel escudeiro', 3, 60, 1, 'Internado em um manicômio por jurar ser o fiel escudeiro de Dom Quixote, o Palhaço Piruá se coloca na pele e na alma de Sancho Pança na esperança de reencontrar o valente cavaleiro de La Mancha.'),
 ('Rei Lixo', 4, 85, 6, 'A trama acompanha a decadência de um rei idoso que decide dividir o próprio reino entre suas três filhas. Iludido pela falsa adulação das duas mais velhas, Goneril e Regana, ele acaba deserdando e banindo Cordélia, a única que lhe oferece afeto sincero.'),
-('A descoberta', 3, 40, 4, 'Retrata a descoberta do átomo pelos cientistas de uma forma comica e irreverente com diversas situações cotidianas');
+('A descoberta', 5, 40, 4, 'Retrata a descoberta do átomo pelos cientistas de uma forma comica e irreverente com diversas situações cotidianas');
 
 -- inserts dos inserts
 
