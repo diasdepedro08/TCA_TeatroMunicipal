@@ -60,34 +60,7 @@ async function cadastrar(e) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//novas linhas nas tabelas do cadastro
 
 function novalinha() {
   const tbody = document.querySelector("#tabelaequipe tbody");
