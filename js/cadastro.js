@@ -26,7 +26,8 @@ async function cadastrar(e) {
         },
         body: JSON.stringify(dadosevento)
         });
-
+        if (!responseE.ok) throw new Error(await responseE.text());
+        const [evento] = await responseE.json();
 
         const dadosproponente = {
             evento_id: evento.id,
@@ -57,6 +58,7 @@ async function cadastrar(e) {
         cadastro.reset();
     } catch (error) {
     console.error('Erro ao cadastrar evento:', error);
+    mensagem.innerHTML = 'Erro ao cadastrar evento. Tente novamente.';
   }
 }
 
