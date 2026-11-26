@@ -1,6 +1,6 @@
 const SUPABASE_URL = "https://tbilczvprmyvizrlvewr.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_lzyGhvv-QA5tNc06ubvFCA_mLFc8dnA";
-const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/Comentarios"
+const API_URL = "https://tbilczvprmyvizrlvewr.supabase.co/rest/v1/"
 
 const comentarios = document.querySelector('#comentarios');
 
@@ -31,7 +31,7 @@ async function criarNoticia(e) {
   };
             
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(API_URL+'Comentarios', {
       method: 'POST',
       headers: {
         apikey: SUPABASE_PUBLISHABLE_KEY,
@@ -51,7 +51,7 @@ async function criarNoticia(e) {
 
 async function buscarcoments() {
   try {
-    const response = await fetch(`${API_URL}`, {
+    const response = await fetch(`${API_URL}Comentarios`, {
       headers: {
         apikey: SUPABASE_PUBLISHABLE_KEY
       }
@@ -87,7 +87,7 @@ comentarios.addEventListener('submit', updateNoticia);
 
 async function buscarNoticias() {
   try {
-    const response = await fetch(`${API_URL}`, {
+    const response = await fetch(`${API_URL}Comentarios`, {
       headers: {
         apikey: SUPABASE_PUBLISHABLE_KEY
       }
@@ -147,7 +147,7 @@ async function updateNoticia(e) {
   };
 
   try {
-    const url = `${API_URL}?id=eq.${id}`;
+    const url = `${API_URL}Comentarios?id=eq.${id}`;
     const response = await fetch(url, {
       method: 'PATCH',
         headers: {    
@@ -174,7 +174,7 @@ async function deletarNoticia(id) {
   if (!confirm('Deseja realmente excluir esta notícia?')) return;
 
   try {
-    const url = `${API_URL}?id=eq.${id}`;
+    const url = `${API_URL}Comentarios?id=eq.${id}`;
     let resposta = await fetch(url, {
       method: 'DELETE',
       headers: {
@@ -191,6 +191,9 @@ async function deletarNoticia(id) {
 
 buscarNoticias();
 buscarcoments();
+
+
+//tabelas cadastro:
 
 function novalinha() {
   const tbody = document.querySelector("#tabelaequipe tbody");
