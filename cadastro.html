@@ -24,7 +24,7 @@
     </nav>
 
     <main>
-    <form>
+    <form id="cadastro">
 
         <fieldset>
             <legend><h1>Proponente:</h1></legend>
@@ -56,17 +56,17 @@
             <label>Inscrição como:
                 <fieldset id="indicativa">
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="inscricao" id="inscricao" value="1" required>
                         <p>Pessoa Física</p>
                     </label>
                     
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="inscricao" id="inscricao" value="2">
                         <p>Pessoa Jurídica</p>
                     </label>
     
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="inscricao" id="inscricao" value="3">
                         <p>Grupo coletivo sem CNPJ</p>
                     </label>
                 </fieldset>
@@ -75,22 +75,27 @@
             <label>Em caso de cotas, selecione abaixo:
                 <fieldset id="indicativa">
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="cotas" id="cotas" value="1" required>
+                        <p>Nenhuma</p>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="cotas" id="cotas" value="2">
                         <p>Negra</p>
                     </label>
                         
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="cotas" id="cotas" value="3">
                         <p>Trans</p>
                     </label>
         
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="cotas" id="cotas" value="4">
                         <p>Indigena</p>
                     </label>
 
                     <label>
-                        <input type="radio" name="inscricao" id="inscricao">
+                        <input type="radio" name="cotas" id="cotas" value="5">
                         <p>PCD</p>
                     </label>
                 </fieldset>
@@ -116,37 +121,37 @@
             <label>Classificação indicativa:
                 <fieldset id="indicativa">
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="1" required>
                         <p>Livre para todos os públicos</p>
                     </label>
                     
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="2">
                         <p>Maiores de 6 anos</p>
                     </label>
     
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="3">
                         <p>Maiores de 10 anos</p>
                     </label>
     
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="4">
                         <p>Maiores de 12 anos</p>
                     </label>
 
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="5">
                         <p>Maiores de 14 anos</p>
                     </label>
     
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="6">
                         <p>Maiores de 16 anos</p>
                     </label>
     
                     <label>
-                        <input type="radio" name="publico" id="publico">
+                        <input type="radio" name="publico" id="publico" value="7">
                         <p>Maiores de 18 anos</p>
                     </label>
                 </fieldset>

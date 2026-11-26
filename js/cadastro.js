@@ -30,7 +30,8 @@ function novadata() {
 
 //Surtos!!
 
-comentarios.addEventListener('submit_evento', cadastrar);
+const cadastro= document.getElementById('cadastro');
+cadastro.addEventListener('submit', cadastrar);
         
 async function cadastrar(e) {
   e.preventDefault(); 
@@ -42,6 +43,9 @@ async function cadastrar(e) {
     cnpj: cnpj.value,
     email: email.value,
     telefone: telefone.value,
+    
+    inscricao_id: 
+
     curriculo: curriculo.value
   };
             
@@ -56,10 +60,10 @@ async function cadastrar(e) {
       body: JSON.stringify(noticiaData)
     });
     const newNoticia = await response.json();
-    mensagem.innerHTML = `Notícia criada com sucesso!<br>Preencha o formulário novamente para criar outra notícia.`;
+    mensagem.innerHTML = `Evento cadastrado com sucesso!`;
     comentarios.reset();
     buscarNoticias();
   } catch (error) {
-    console.error('Erro ao criar notícia:', error);
+    console.error('Erro ao cadastrar evento:', error);
   }
 }
